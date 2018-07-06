@@ -26,7 +26,7 @@
                 'second_name' => '',
                 'last_name' => 'Garcia Ramos',
                 
-                'email' => 'example1@gmail.com',
+                'email' => 'reymillenium@gmail.com',
                 'password' => bcrypt('123456'),
                 
                 'phone' => '1111111111',
