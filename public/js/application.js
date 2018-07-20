@@ -1,50 +1,22 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 /* Forma Recomendada */
 $(function () {
 
     //Asignamos los eventos comunes a los componente html de toda la aplicación web
     asignarEventos();
 
-//    $(".swipebox").swipebox();
-
-
 });
 
 // Asigno las funciones para cada evento común, de cada componente
 function asignarEventos() {
 
-
     /*------------------------------------------------------------------------------------------------------------------
      --> *** Definition of the events common for all the Web Site pages *** <--  
      -----------------------------------------------------------------------------------------------------------------*/
 
-    // $("[data-load]").each(function () {
-    //     $(this).load($(this).data("load"), function () {
-    //     });
-    // });
-
-//    $('ul.menu li.dropdown').on('mouseover', showUnorderedListHover);
-//    $('li#li_resources').click(showUnorderedListHover);
     $('a#a_links').click(showUnorderedListHover);
-
-
-    /*------------------------------------------------------------------------------------------------------------------
-     --> *** Definition of the Specific Events of the index.html page *** <--  
-     -----------------------------------------------------------------------------------------------------------------*/
-
-    // start-smoth-scrolling
-    // scrollingIcon();
-
 
     // Flexisel. Responsive Carousel jQuery Plugin. Videos en index_page. De último para q no intervenga con la carga de los header
     flexisel();
-
 
 }
 
@@ -53,14 +25,7 @@ function asignarEventos() {
  ---------------------------------------------------------------------------------------------------------------------*/
 
 function showUnorderedListHover() {
-    // alert('test showUnorderedListHover');
-   // alertify.alert('test showUnorderedListHover');
-
-    /* Disparo el evento click del enlace con clase dropdown-toggle, para que se mmuestre el ul en el evento mouseover (no en el click) */
-
-    /* Modo inicial de invocar el click. Funciona solo cuando se ejecuta una función anónima en el evento hover */
-    // $('.dropdown-toggle', this).trigger('click');
-//    $('.dropdown-toggle', 'li.dropdown').trigger('click');
+    // alertify.alert('test showUnorderedListHover');
 
     /* Cambio la figura del caret en el b, de abajo hacia arriba */
     $('li.dropdown a b.fa-caret-down').removeClass('fa-caret-down').addClass('fa-caret-up');
@@ -105,12 +70,13 @@ function scrollingIcon() {
 
 }
 
-// Flexisel. Responsive Carousel jQuery Plugin
+// Flexisel. Responsive Carousel jQuery Plugin. Videitos en la pagina de inicio
 function flexisel() {
 
     /* Verifico que sea la página de inicio */
     if (location.href.split("/").slice(-1).toString() === 'index_page') {
 
+        // Verifico que exista el componente
         if ($("#flexiselDemo3")) {
 
             $("#flexiselDemo3").flexisel({

@@ -12,29 +12,26 @@
     <meta name="description" content="Sitio Web de la Iglesia Buenas Nuevas">
     <meta name="keywords" content="buenas nuevas, iglesia, religión">
 
-    <!-- Web site icon -->
+    <!-- Web site Icon -->
     <link rel="icon" type="image/png" href="{{asset('images/icons/icons8-Church_100.png')}}"/>
 
-
-    <!------------------------ ***** External Files with JavaScript code ***** ------------------------------------>
+    <!---------------------------- ***** External Files with JavaScript code ***** ------------------------------------>
 
     <!-- Amazing Slider Gallery. Insert to your webpage before the </head> -->
     <script src="{{asset('sliderengine/jquery.js')}}"></script>
-
     <script src="{{asset('sliderengine/amazingslider.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('sliderengine/amazingslider-1.css')}}">
     <script src="{{asset('sliderengine/initslider-1.js')}}"></script>
     <!-- /Amazing  -->
 
 
     {{-- Hubo que quitarla para que funcionara Amazing Slider Gallery --}}
-    <!-- ** Dirección del fichero .js de la Librería jQuery ** -->
-{{--    <script src="{{asset('js/jquery.min.js')}}"></script>--}}
+<!-- ** Dirección del fichero .js de la Librería jQuery ** -->
+    {{--<script src="{{asset('js/jquery.min.js')}}"></script>--}}
 
-    <!-- Plugin de jquery para las animaciones -->
+<!-- Plugin de jquery para las animaciones -->
     {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
 
-    <!-- ** Dirección del fichero .js con funciones y eventos definidos por el Programador ** -->
+<!-- ** Dirección del fichero .js con funciones y eventos definidos por el Programador ** -->
     <script type="application/x-javascript"> addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
@@ -46,45 +43,45 @@
 
 
     <!-- ** Dirección del fichero .js del plugin Alertify ** -->
-    <script type="text/javascript" src="{{asset('js_files/alertify/lib/alertify.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('alertify/alertify-1.11.1/alertify.min.js')}}"></script>
 
     <!-- ** Uso de HighCharts para Graficaciones ** -->
 
-
-    <!-------------------------- *** Hoja(s) de Estilo (CSS) a Emplear *** ---------------------------------------->
-
+    <!------------------------------- *** Hoja(s) de Estilo (CSS) a Emplear *** --------------------------------------->
 
     <!-- Estilos de Bootstraps -->
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all">
 
-    <!-- Estilo adicional tomado de treasurer -->
-    <!--<link href="css/style_treasurer.css" rel="stylesheet" type="text/css" media="all" />-->
-
-    <!-- Estilos de componentes definidos por el Programador -->
-    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>
-
-
+    {{-- FlexSlider. Minigalería Carrusel de la pagina de inicio --}}
     <link rel="stylesheet" href="{{asset('css/flexslider.css')}}" type="text/css" media="screen"/>
 
-    <!-- Alertify: include the core styles -->
-    <link rel="stylesheet" href="{{asset('js/alertify/themes/alertify.core.css')}}"/>
+    <!-- Alertify Package: include the core styles -->
+    <link rel="stylesheet" href="{{asset('alertify/alertify-1.11.1/css/alertify.min.css')}}"/>
 
-    <!-- Alertify: include a theme, can be included into the core instead of using 2 separate files (like now) -->
-    <link rel="stylesheet" href="{{asset('js/alertify/themes/alertify.default.css')}}"/>
+    <!-- Alertify Package: include a theme, can be included into the core instead of using 2 separate files (like now) -->
+    {{--<link rel="stylesheet" href="{{asset('alertify/alertify-1.11.1/css/themes/bootstrap.css')}}"/>--}}
+    {{--<link rel="stylesheet" href="{{asset('alertify/alertify-1.11.1/css/themes/semantic.css')}}"/>--}}
+    <link rel="stylesheet" href="{{asset('alertify/alertify-1.11.1/css/themes/default.css')}}"/>
 
-    <!-- Font(s) a emplear -->
+    <!-- Font(s) a emplear (Lora) -->
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
 
-    <!-- Font Awesome -->
+    <!-- FontAwesome Package -->
     <!--<link rel="stylesheet" href="css_files/others/font-awesome-4.7.0/css/font-awesome.css"/>-->
 
-    <!-- Font Awesome icons -->
+    <!-- FontAwesome icons -->
     <!--<link href="css/font-awesome.css" rel="stylesheet">-->
     <!-- Con esta clase no se muestra bien el icono de pinterest -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Font Awesome Animated Icons -->
     <link href="{{asset('css/font-awesome-animation.css')}}" rel="stylesheet">
+
+    {{-- AmazingSlider Gallery Package --}}
+    <link rel="stylesheet" type="text/css" href="{{asset('sliderengine/amazingslider-1.css')}}">
+
+    <!-- Estilos de componentes definidos por el Programador -->
+    <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>
 
 </head>
 
@@ -134,7 +131,8 @@
                     </li>
                     |
                     <li>
-                        <a class="en" href="#"><img src="{{asset('images/icons/languages/United-kingdom.png')}}"> English</a>
+                        <a class="en" href="#"><img src="{{asset('images/icons/languages/United-kingdom.png')}}">
+                            English</a>
                     </li>
                     |
                     <li>
@@ -330,20 +328,26 @@
     <div class="container">
         <p>
             Copyrights © 2015 HolyChurch All rights reserved</a>
+            <br>
 
             <span class="faa-parent animated-hover">
-                <span class="fa fa-copyright faa-ring fa-slow"></span> All Copyrights Reserved BlasterSoft: {{date('Y')}}
+                <span class="far fa-copyright faa-ring fa-slow"></span> Copyrights {{date('Y')}} Reserved BlasterSoft:
             </span>
 
         </p>
+        <br>
 
         <a href="http://reiniergarcia.com" style="text-decoration: none; left: 200px !important;">
             <span class="text-muted faa-parent animated-hover">
-                <span class="fa fa-copyright faa-ring fa-slow"></span> All Copyrights Reserved BlasterSoft: {{date('Y')}}
+                <i class="fa fa-copyright faa-ring fa-slow"></i> All Copyrights Reserved BlasterSoft: {{date('Y')}}
             </span>
         </a>
+        <br>
+
     </div>
 </div>
+
+
 
 
 </body>
