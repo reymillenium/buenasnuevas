@@ -137,7 +137,7 @@
                     <!-- Authentication Links -->
                     @guest
                         <li>
-                            <a class="login" href="{{ route('login') }}">Logins</a>
+                            <a class="login" href="{{ route('login') }}">Ingresar</a>
                         </li>
                         {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
                     @else
@@ -145,7 +145,7 @@
                             <a href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                Logout
+                                Desconectarse
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -189,7 +189,7 @@
                 <a href="index.html"><img src="{{asset('images/logos/logo_Church_Photoshop_es.png')}}" class="img-responsive" alt=""/></a>
             </div>
             <div class="bottom-left">
-                <a href="register_es.html">¿NUEVO AQUÍ? REGÍSTRESE</a>
+                <a href="{{route('register')}}">¿NUEVO AQUÍ? REGÍSTRESE</a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -218,17 +218,32 @@
 
 
                     <li id="li_resources" class="dropdown" onmouseover="showUnorderedListHover()" onmouseout="hideUnorderedListMouseLeave()">
+
                         <a href="#" class="dropdown-toggle hvr-underline-from-center" data-hover="RECURSOS">RECURSOS
-                            <b class="fa fa-caret-down"></b></a>
+                            <b class="fa fa-caret-down"></b>
+                        </a>
+
                         <ul class="sub-menu dropdown-menu" onmouseout="hideUnorderedListMouseLeave()">
-                            {{--<li><a id="a_video_gallery" href="slider_es.html" data-hover="VIDEOS">VIDEOS</a></li>--}}
-                            <li><a href="{{ route('videos_page') }}">VIDEOS</a></li>
-                            {{--<li><a id="a_photos" href="photos_es.html" data-hover="FOTOS">FOTOS</a></li>--}}
-                            <li><a href="{{ route('pictures_page') }}">FOTOS</a></li>
-                            <li>
-                                <a id="a_library" href="https://www.cristianismohist.com/" data-hover="LIBRERÍA" target="_newtab">LIBRERÍA</a>
-                            </li>
-                            <li><a id="a_links" href="" data-hover="ENLACES">ENLACES</a></li>
+
+                            <!-- Dropdown Links -->
+                            @guest
+                                <li>
+                                    <a id="a_library" href="https://www.cristianismohist.com/" data-hover="LIBRERÍA" target="_newtab">LIBRERÍA</a>
+                                </li>
+
+                                <li><a id="a_links" href="" data-hover="ENLACES">ENLACES</a></li>
+                            @else
+                                <li><a href="{{ route('user.user_page') }}">{{ Auth::user()->first_name }}</a></li>
+                                <li><a href="{{ route('videos_page') }}">VIDEOS</a></li>
+                                <li><a href="{{ route('pictures_page') }}">FOTOS</a></li>
+                                <li>
+                                    <a id="a_library" href="https://www.cristianismohist.com/" data-hover="LIBRERÍA" target="_newtab">LIBRERÍA</a>
+                                </li>
+
+                                <li><a id="a_links" href="" data-hover="ENLACES">ENLACES</a></li>
+                            @endguest
+                            <!-- /Dropdown Links -->
+
                         </ul>
                     </li>
                     <label>|</label>
