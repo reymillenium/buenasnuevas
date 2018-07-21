@@ -23,24 +23,15 @@
     <script src="{{asset('sliderengine/initslider-1.js')}}"></script>
     <!-- /Amazing  -->
 
-
-    {{-- Hubo que quitarla para que funcionara Amazing Slider Gallery --}}
+{{-- Hubo que quitarla para que funcionara Amazing Slider Gallery --}}
 <!-- ** Dirección del fichero .js de la Librería jQuery ** -->
-    {{--<script src="{{asset('js/jquery.min.js')}}"></script>--}}
+{{--<script src="{{asset('js/jquery.min.js')}}"></script>--}}
 
 <!-- Plugin de jquery para las animaciones -->
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
 
 <!-- ** Dirección del fichero .js con funciones y eventos definidos por el Programador ** -->
-    <script type="application/x-javascript"> addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        } </script>
     <script src="{{asset('js/application.js')}}"></script>
-
 
     <!-- ** Dirección del fichero .js del plugin Alertify ** -->
     <script type="text/javascript" src="{{asset('alertify/alertify-1.11.1/alertify.min.js')}}"></script>
@@ -67,14 +58,16 @@
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
 
     <!-- FontAwesome Package -->
-    <!--<link rel="stylesheet" href="css_files/others/font-awesome-4.7.0/css/font-awesome.css"/>-->
+    <link rel="stylesheet" href="{{asset('fontawesome/fontawesome-free-5.1.1-web/css/all.css')}}"/>
+    {{--<link rel="stylesheet" href="{{asset('fontawesome/fontawesome-free-5.1.1-web/css/fontawesome.css')}}"/>--}}
+    {{--<link rel="stylesheet" href="{{asset('fontawesome/fontawesome-free-5.1.1-web/css/brands.css')}}"/>--}}
 
-    <!-- FontAwesome icons -->
+<!-- FontAwesome icons -->
     <!--<link href="css/font-awesome.css" rel="stylesheet">-->
     <!-- Con esta clase no se muestra bien el icono de pinterest -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    {{--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">--}}
 
-    <!-- Font Awesome Animated Icons -->
+<!-- Font Awesome Animated Icons -->
     <link href="{{asset('css/font-awesome-animation.css')}}" rel="stylesheet">
 
     {{-- AmazingSlider Gallery Package --}}
@@ -107,7 +100,7 @@
                             <i class="fa fa-phone faa-ring fa-slow" aria-hidden="true"></i>(305) 635-8058
                         </li>
                         <li id="li_email" class="faa-parent animated-hover" style="cursor: pointer">
-                            <i class="fa fa-envelope-o faa-shake fa-slow" aria-hidden="true"></i>
+                            <i class="fa fa-envelope faa-shake fa-slow" aria-hidden="true"></i>
                             <a id="a_email" href="mailto:buenasnuevasmiami@gmail.com" target="_newtab">BuenasNuevasMiami@gmail.com</a>
                         </li>
                     </ul>
@@ -260,7 +253,9 @@
 <!-- /Header -->
 
 
+{{-- CONTENT --}}
 @yield('content')
+{{-- /CONTENT --}}
 
 
 <!-- FOOTER -->
@@ -324,31 +319,21 @@
 </footer>
 <!-- /FOOTER -->
 
+<!-- FOOTER BOTTOM -->
 <div class="footer-bottom">
     <div class="container">
         <p>
-            Copyrights © 2015 HolyChurch All rights reserved</a>
-            <br>
-
+            {{-- © --}}
+            <a href="http://reiniergarcia.com" style="text-decoration: none; left: 200px !important;">
             <span class="faa-parent animated-hover">
-                <span class="far fa-copyright faa-ring fa-slow"></span> Copyrights {{date('Y')}} Reserved BlasterSoft:
+                 Copyrights <i class="far fa-copyright faa-bounce"></i> {{date('Y')}}BlasterSoft. All rights reserved
             </span>
+            </a>
 
         </p>
-        <br>
-
-        <a href="http://reiniergarcia.com" style="text-decoration: none; left: 200px !important;">
-            <span class="text-muted faa-parent animated-hover">
-                <i class="fa fa-copyright faa-ring fa-slow"></i> All Copyrights Reserved BlasterSoft: {{date('Y')}}
-            </span>
-        </a>
-        <br>
-
     </div>
 </div>
-
-
-
+<!-- /FOOTER BOTTOM -->
 
 </body>
 </html>
