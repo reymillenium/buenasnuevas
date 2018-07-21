@@ -25,7 +25,7 @@ function asignarEventos() {
  ---------------------------------------------------------------------------------------------------------------------*/
 
 function showUnorderedListHover() {
-    // alertify.alert('test showUnorderedListHover');
+    alertify.alert('test showUnorderedListHover');
 
     /* Cambio la figura del caret en el b, de abajo hacia arriba */
     $('li.dropdown a b.fa-caret-down').removeClass('fa-caret-down').addClass('fa-caret-up');
