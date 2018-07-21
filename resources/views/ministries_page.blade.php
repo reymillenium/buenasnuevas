@@ -12,10 +12,10 @@
                     <h3>Services Overview</h3>
                     <div class="col-md-4 service_grid">
                         <div class="view view-tenth">
-                            <a href="single_es.html">
+                            <a href="{{route('index_page')}}">
                                 <div class="inner_content clearfix">
                                     <div class="product_image">
-                                        <img src="images/Bautizo.jpg" class="img-responsive" alt=""/>
+                                        <img src="{{asset('images/Bautizo.jpg')}}" class="img-responsive" alt=""/>
                                         <div class="mask">
                                             <h4>Hand made design</h4>
                                             <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
@@ -37,10 +37,10 @@
                     </div>
                     <div class="col-md-4 service_grid">
                         <div class="view view-tenth">
-                            <a href="single_es.html">
+                            <a href="{{route('index_page')}}">
                                 <div class="inner_content clearfix">
                                     <div class="product_image">
-                                        <img src="images/Boda.jpg" class="img-responsive" alt=""/>
+                                        <img src="{{asset('images/Boda.jpg')}}" class="img-responsive" alt=""/>
                                         <div class="mask">
                                             <h4>Hand made design</h4>
                                             <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
@@ -62,10 +62,10 @@
                     </div>
                     <div class="col-md-4 service_grid span_55">
                         <div class="view view-tenth">
-                            <a href="single_es.html">
+                            <a href="{{route('index_page')}}">
                                 <div class="inner_content clearfix">
                                     <div class="product_image">
-                                        <img src="images/ServicioDeAdoracion.jpg" class="img-responsive" alt=""/>
+                                        <img src="{{asset('images/ServicioDeAdoracion.jpg')}}" class="img-responsive" alt=""/>
                                         <div class="mask">
                                             <h4>Hand made design</h4>
                                             <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
@@ -96,10 +96,10 @@
                     <div class="col-md-4 grid_7">
                         <div class="element">
                             <div class="view view-tenth">
-                                <a href="single_es.html">
+                                <a href="{{route('index_page')}}">
                                     <div class="inner_content clearfix">
                                         <div class="product_image">
-                                            <img src="images/5.jpg" class="img-responsive" alt=""/>
+                                            <img src="{{asset('images/5.jpg')}}" class="img-responsive" alt=""/>
                                             <div class="mask">
                                                 <h4>Hand made design</h4>
                                                 <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
@@ -121,10 +121,10 @@
                     <div class="col-md-4 grid_7">
                         <div class="element">
                             <div class="view view-tenth">
-                                <a href="single_es.html">
+                                <a href="{{route('index_page')}}">
                                     <div class="inner_content clearfix">
                                         <div class="product_image">
-                                            <img src="images/7.jpg" class="img-responsive" alt=""/>
+                                            <img src="{{asset('images/7.jpg')}}" class="img-responsive" alt=""/>
                                             <div class="mask">
                                                 <h4>Hand made design</h4>
                                                 <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
@@ -146,10 +146,10 @@
                     <div class="col-md-4 grid_7">
                         <div class="element">
                             <div class="view view-tenth">
-                                <a href="single_es.html">
+                                <a href="{{route('index_page')}}">
                                     <div class="inner_content clearfix">
                                         <div class="product_image">
-                                            <img src="images/9.jpg" class="img-responsive" alt=""/>
+                                            <img src="{{asset('images/9.jpg')}}" class="img-responsive" alt=""/>
                                             <div class="mask">
                                                 <h4>Hand made design</h4>
                                                 <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,

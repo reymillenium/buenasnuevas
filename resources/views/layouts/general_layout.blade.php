@@ -21,26 +21,24 @@
     <script src="{{asset('sliderengine/jquery.js')}}"></script>
     <script src="{{asset('sliderengine/amazingslider.js')}}"></script>
     <script src="{{asset('sliderengine/initslider-1.js')}}"></script>
-    <!-- /Amazing  -->
 
-{{-- Hubo que quitarla para que funcionara Amazing Slider Gallery --}}
-<!-- ** Dirección del fichero .js de la Librería jQuery ** -->
-{{--<script src="{{asset('js/jquery.min.js')}}"></script>--}}
-
-<!-- Plugin de jquery para las animaciones -->
+    <!-- Plugin de jquery para las animaciones -->
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
 
-<!-- ** Dirección del fichero .js con funciones y eventos definidos por el Programador ** -->
-    <script src="{{asset('js/application.js')}}"></script>
-
-    <!-- ** Dirección del fichero .js del plugin Alertify ** -->
+<!-- ** Dirección del fichero .js del plugin Alertify ** -->
     <script type="text/javascript" src="{{asset('alertify/alertify-1.11.1/alertify.min.js')}}"></script>
+
+    <!-- Plugin Swipebox para la Galeria de Imágenes -->
+    <script src="{{asset('js/jquery.swipebox.min.js')}}"></script>
+
+    <!-- ** Dirección del fichero .js con funciones y eventos definidos por el Programador ** -->
+    <script src="{{asset('js/application.js')}}"></script>
 
     <!-- ** Uso de HighCharts para Graficaciones ** -->
 
     <!------------------------------- *** Hoja(s) de Estilo (CSS) a Emplear *** --------------------------------------->
 
-    <!-- Estilos de Bootstraps -->
+    <!-- Bootstrap -->
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all">
 
     {{-- FlexSlider. Minigalería Carrusel de la pagina de inicio --}}
@@ -50,8 +48,6 @@
     <link rel="stylesheet" href="{{asset('alertify/alertify-1.11.1/css/alertify.min.css')}}"/>
 
     <!-- Alertify Package: include a theme, can be included into the core instead of using 2 separate files (like now) -->
-    {{--<link rel="stylesheet" href="{{asset('alertify/alertify-1.11.1/css/themes/bootstrap.css')}}"/>--}}
-    {{--<link rel="stylesheet" href="{{asset('alertify/alertify-1.11.1/css/themes/semantic.css')}}"/>--}}
     <link rel="stylesheet" href="{{asset('alertify/alertify-1.11.1/css/themes/default.css')}}"/>
 
     <!-- Font(s) a emplear (Lora) -->
@@ -59,15 +55,8 @@
 
     <!-- FontAwesome Package -->
     <link rel="stylesheet" href="{{asset('fontawesome/fontawesome-free-5.1.1-web/css/all.css')}}"/>
-    {{--<link rel="stylesheet" href="{{asset('fontawesome/fontawesome-free-5.1.1-web/css/fontawesome.css')}}"/>--}}
-    {{--<link rel="stylesheet" href="{{asset('fontawesome/fontawesome-free-5.1.1-web/css/brands.css')}}"/>--}}
 
-<!-- FontAwesome icons -->
-    <!--<link href="css/font-awesome.css" rel="stylesheet">-->
-    <!-- Con esta clase no se muestra bien el icono de pinterest -->
-    {{--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">--}}
-
-<!-- Font Awesome Animated Icons -->
+    <!-- Font Awesome Animated Icons -->
     <link href="{{asset('css/font-awesome-animation.css')}}" rel="stylesheet">
 
     {{-- AmazingSlider Gallery Package --}}
@@ -76,10 +65,21 @@
     <!-- Estilos de componentes definidos por el Programador -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all"/>
 
+    {{-- Swipebox: Gelería de Imágenes --}}
+    <link rel="stylesheet" href="{{asset('css/swipebox.css')}}">
+
 </head>
 
 <body>
 
+{{-- Permite mostrar las fotos de la Galería de Imágenes --}}
+<script type="text/javascript">
+
+    jQuery(function ($) {
+        $(".swipebox").swipebox();
+    });
+
+</script>
 
 <!-- Header -->
 <div class="header">
@@ -291,11 +291,11 @@
 
         <div class="col-md-3 or">
             <h3>Nuestra Iglesia</h3>
-            <li><a href="ourmission.html">• Our Mission</a></li>
-            <li><a href="services.html">• Service</a></li>
-            <li><a href="study.html">• Study</a></li>
-            <li><a href="404.html">• Sermons</a></li>
-            <li><a href="prayer.html">• Prayers</a></li>
+            <li><a href="{{ route('our_mission_page') }}">• Nuestra misión</a></li>
+            <li><a href="{{ route('activities_page') }}">• Actividades</a></li>
+            <li><a href="{{ route('ministries_page') }}">• Ministerios</a></li>
+            <li><a href="{{ route('study_page') }}">• Estudio</a></li>
+            <li><a href="{{ route('contact_page') }}">• Contacto</a></li>
         </div>
 
         <div class="col-md-3 con">
