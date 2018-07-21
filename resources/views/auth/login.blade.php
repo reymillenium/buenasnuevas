@@ -1,6 +1,9 @@
-@extends('layouts.general_layout')
+<?php $layoutName = 'general_layout'; ?>
 
-@section('page_title', "Logueo")
+{{--@extends('layouts.general_layout' . $layoutName)--}}
+@extends('layouts.' . $layoutName)
+
+@section('page_title', "Ingresar")
 
 @section('content')
     <div class="study">
