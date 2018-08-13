@@ -232,22 +232,25 @@
                             @guest
                                 <li>
                                     {{--<a id="a_library" href="https://www.cristianismohist.com/"  data-hover="LIBRERÍA" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>--}}
-                                    <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>
+                                    <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i>
+                                        LIBRERÍA</a>
                                 </li>
 
-                                <li><a id="a_links" href=""><i class="fa fa-link"></i> ENLACES</a></li>
+                                <li><a href=""><i class="fa fa-link"></i> ENLACES</a></li>
                             @else
                                 <li>
-                                    <a href="{{ route('user.user_page') }}"><i class="fa fa-user"></i> {{ Auth::user()->first_name}}</a>
+                                    <a href="{{ route('user.user_page') }}"><i class="fa fa-user"></i> {{ Auth::user()->first_name}}
+                                    </a>
                                 </li>
                                 <li><a href="{{ route('videos_page') }}"><i class="fa fa-video"></i> VIDEOS</a></li>
                                 <li><a href="{{ route('pictures_page') }}"><i class="fa fa-image"></i> FOTOS</a></li>
                                 <li>
                                     {{--<a id="a_library" href="https://www.cristianismohist.com/"  data-hover="LIBRERÍA" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>--}}
-                                    <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>
+                                    <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i>
+                                        LIBRERÍA</a>
                                 </li>
 
-                                <li><a id="a_links" href=""><i class="fa fa-link"></i> ENLACES</a></li>
+                                <li><a href=""><i class="fa fa-link"></i> ENLACES</a></li>
                         @endguest
                         <!-- /Dropdown Links -->
 
