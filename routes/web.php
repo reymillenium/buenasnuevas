@@ -23,7 +23,7 @@
     // });
     
     // Defino la página de inicio
-    Route::get('/', 'GuestController@show_index_page')->name('index_page');
+    Route::get('/', 'GuestController@show_index_page')->name('default_page');
     
     Route::get('/home', 'GuestController@show_home_page')->name('home');
     

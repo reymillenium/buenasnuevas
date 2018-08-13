@@ -104,18 +104,8 @@
                             <a id="a_email" href="mailto:buenasnuevasmiami@gmail.com" target="_newtab">BuenasNuevasMiami@gmail.com</a>
                         </li>
                     </ul>
-
-
                 </div>
-
-                <!--</div>-->
-
-                <!--                        <ul class="number">
-                                            <li><span>Próxima Adoración : Domingo 10:00 am</span></li>
-                                        </ul>-->
-
             </div>
-
 
             <div class="head-right">
                 <ul id="ul_languages" class="languages">
@@ -133,18 +123,23 @@
                     </li>
                     |
 
-
-                    <!-- Authentication Links -->
+                    {{--<!-- Authentication Links -->--}}
                     @guest
-                        <li>
-                            <a class="login" href="{{ route('login') }}">Ingresar</a>
+                        {{--<li>--}}
+                        {{--<a class="login" href="{{ route('login') }}">Ingresar</a>--}}
+                        {{--</li>--}}
+
+                        <li id="li_email" style="cursor: pointer">
+                            <a class="login faa-parent animated-hover" href="{{ route('login') }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
+                                Ingresar</a>
                         </li>
                         {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
                     @else
                         <li>
-                            <a href="{{ route('logout') }}"
+                            <a class="login faa-parent animated-hover" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt faa-horizontal fa-slow" aria-hidden="true"></i>
                                 Desconectarse
                             </a>
 
@@ -153,6 +148,7 @@
                             </form>
                         </li>
                     @endguest
+                    {{--<!-- \Authentication Links -->--}}
 
 
                     <div class="clearfix"></div>
@@ -188,9 +184,16 @@
             <div class="logo">
                 <a href="index.html"><img src="{{asset('images/logos/logo_Church_Photoshop_es.png')}}" class="img-responsive" alt=""/></a>
             </div>
-            <div class="bottom-left">
-                <a href="{{route('register')}}">¿NUEVO AQUÍ? REGÍSTRESE</a>
-            </div>
+
+            <!-- Authentication Links -->
+            @guest
+                <div class="bottom-left">
+                    <a href="{{route('register')}}">¿NUEVO AQUÍ? REGÍSTRESE</a>
+                </div>
+            @else
+            @endguest
+            {{--<!-- /Authentication Links -->--}}
+
             <div class="clearfix"></div>
         </div>
     </div>
@@ -228,21 +231,25 @@
                             <!-- Dropdown Links -->
                             @guest
                                 <li>
-                                    <a id="a_library" href="https://www.cristianismohist.com/" data-hover="LIBRERÍA" target="_newtab">LIBRERÍA</a>
+                                    {{--<a id="a_library" href="https://www.cristianismohist.com/"  data-hover="LIBRERÍA" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>--}}
+                                    <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>
                                 </li>
 
-                                <li><a id="a_links" href="" data-hover="ENLACES">ENLACES</a></li>
+                                <li><a id="a_links" href=""><i class="fa fa-link"></i> ENLACES</a></li>
                             @else
-                                <li><a href="{{ route('user.user_page') }}">{{ Auth::user()->first_name }}</a></li>
-                                <li><a href="{{ route('videos_page') }}">VIDEOS</a></li>
-                                <li><a href="{{ route('pictures_page') }}">FOTOS</a></li>
                                 <li>
-                                    <a id="a_library" href="https://www.cristianismohist.com/" data-hover="LIBRERÍA" target="_newtab">LIBRERÍA</a>
+                                    <a href="{{ route('user.user_page') }}"><i class="fa fa-user"></i> {{ Auth::user()->first_name}}</a>
+                                </li>
+                                <li><a href="{{ route('videos_page') }}"><i class="fa fa-video"></i> VIDEOS</a></li>
+                                <li><a href="{{ route('pictures_page') }}"><i class="fa fa-image"></i> FOTOS</a></li>
+                                <li>
+                                    {{--<a id="a_library" href="https://www.cristianismohist.com/"  data-hover="LIBRERÍA" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>--}}
+                                    <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>
                                 </li>
 
-                                <li><a id="a_links" href="" data-hover="ENLACES">ENLACES</a></li>
-                            @endguest
-                            <!-- /Dropdown Links -->
+                                <li><a id="a_links" href=""><i class="fa fa-link"></i> ENLACES</a></li>
+                        @endguest
+                        <!-- /Dropdown Links -->
 
                         </ul>
                     </li>
@@ -341,7 +348,7 @@
             {{-- © --}}
             <a href="http://reiniergarcia.com" style="text-decoration: none; left: 200px !important;">
             <span class="faa-parent animated-hover">
-                 Copyrights <i class="far fa-copyright faa-bounce"></i> {{date('Y')}}BlasterSoft. All rights reserved
+                 Copyrights <i class="far fa-copyright faa-bounce"></i> {{date('Y')}} BlasterSoft. All rights reserved
             </span>
             </a>
 
