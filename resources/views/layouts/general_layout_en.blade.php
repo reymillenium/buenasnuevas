@@ -122,7 +122,7 @@
                     </li>
                     |
                     <li>
-                        <a class="fr" href="#"><img src="{{asset('images/icons/languages/France.png')}}"> Français</a>
+                        <a class="fr" href="{{route(collect(request()->segments())->last(), ['language'=> 'fr'])}}"><img src="{{asset('images/icons/languages/France.png')}}"> Français</a>
                     </li>
                     |
 

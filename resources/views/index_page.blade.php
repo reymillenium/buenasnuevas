@@ -92,7 +92,7 @@
                             <script type="text/javascript" src="{{asset('js/jquery.flexisel.js')}}"></script>
 
                         </div>
-                        <a href="{{ route('videos_page', ['language' => 'es']) }}" class="vie">Ver Todos</a>
+                        <a href="{{ route('videos_page', ['language' => $layout_language]) }}" class="vie">Ver Todos</a>
                         <!-- recent -->
 
                     </div>
