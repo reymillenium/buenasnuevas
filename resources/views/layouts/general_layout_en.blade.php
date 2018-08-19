@@ -349,12 +349,12 @@
 
 <!-- FOOTER BOTTOM -->
 <div class="footer-bottom">
-    <div class="container">
+    <div class="container" style="text-align: center;">
         <p>
             {{-- © --}}
             <a href="http://reiniergarcia.com" style="text-decoration: none; left: 200px !important;">
             <span class="faa-parent animated-hover">
-                 Copyrights <i class="far fa-copyright faa-bounce"></i> {{date('Y')}} BlasterSoft. All rights reserved
+                 Copyrights <i class="far fa-copyright faa-bounce"></i> {{date('Y')}} Reinier Garcia Ramos. All rights reserved
             </span>
             </a>
 

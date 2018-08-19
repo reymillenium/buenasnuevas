@@ -297,10 +297,10 @@
 
 
         <div class="col-md-3 loc">
-            <h3>Nuestra Ubicación</h3>
+            <h3>Notre emplacement</h3>
 
             <p id="p_church_name" class="">
-                Iglesia Bautista Buenas Nuevas
+                Bonne nouvelle église baptiste
             </p>
 
             <p id="p_address1" class="">
@@ -311,27 +311,27 @@
                 Miami, FL 33125, USA
             </p>
 
-            <p><span>Teléfono :</span> (305) 635-8058</p>
+            <p><span>Téléphone :</span> (305) 635-8058</p>
             <span>Email : </span><a href="mailto:example@gmail.com">info@company.com</a>
         </div>
 
         <div class="col-md-3 ma">
-            <h3>Búsquenos</h3>
+            <h3>Nous trouver</h3>
             <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12947831.742778081!2d-95.665!3d37.599999999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1427784587281" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>-->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.5357459729416!2d-80.25020808555051!3d25.7858937138933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b73dc4f73af1%3A0x98b16e86c8b112c4!2sIglesia+Bautists+Buenas+Nuevas!5e0!3m2!1ses!2sus!4v1507517766144" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
 
         <div class="col-md-3 or">
-            <h3>Nuestra Iglesia</h3>
-            <li><a href="{{ route('our_mission_page', ['language'=>'fr']) }}">• Nuestra misión</a></li>
-            <li><a href="{{ route('activities_page', ['language'=>'fr']) }}">• Actividades</a></li>
-            <li><a href="{{ route('ministries_page', ['language'=>'fr']) }}">• Ministerios</a></li>
-            <li><a href="{{ route('study_page', ['language'=>'fr']) }}">• Estudio</a></li>
-            <li><a href="{{ route('contact_page', ['language'=>'fr']) }}">• Contacto</a></li>
+            <h3>Notre église</h3>
+            <li><a href="{{ route('our_mission_page', ['language'=>'fr']) }}">• Notre mission</a></li>
+            <li><a href="{{ route('activities_page', ['language'=>'fr']) }}">• Activités</a></li>
+            <li><a href="{{ route('ministries_page', ['language'=>'fr']) }}">• Les ministères</a></li>
+            <li><a href="{{ route('study_page', ['language'=>'fr']) }}">• Étudier</a></li>
+            <li><a href="{{ route('contact_page', ['language'=>'fr']) }}">• Contact</a></li>
         </div>
 
         <div class="col-md-3 con">
-            <h3>Conéctese</h3>
+            <h3>Se connecter</h3>
             <ul class="social">
                 <li>
                     <a href="https://www.facebook.com/pages/Iglesia-Bautista-Buenas-Nuevas/115422128483909" target="_newtab"><i class="fb"> </i>Facebook</a>
@@ -353,12 +353,12 @@
 
 <!-- FOOTER BOTTOM -->
 <div class="footer-bottom">
-    <div class="container">
+    <div class="container" style="text-align: center;">
         <p>
             {{-- © --}}
             <a href="http://reiniergarcia.com" style="text-decoration: none; left: 200px !important;">
             <span class="faa-parent animated-hover">
-                 Copyrights <i class="far fa-copyright faa-bounce"></i> {{date('Y')}} BlasterSoft. All rights reserved
+                 Copyrights <i class="far fa-copyright faa-bounce"></i> {{date('Y')}} Reinier Garcia Ramos. Tous les droits sont réservés
             </span>
             </a>
 
