@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <title>@yield('page_title') - Iglesia Buenas Nuevas</title>
+    <title>@yield('page_title') - Baptist Church Buenas Nuevas</title>
 
 
     <!-- *** Basic characteristics of the web page. *** -->
@@ -110,11 +110,14 @@
             <div class="head-right">
                 <ul id="ul_languages" class="languages">
                     <li>
-                        <a class="es" href="#"><img src="{{asset('images/icons/languages/Spain.png')}}"> Español</a>
+                        <a class="es" href="{{route(collect(request()->segments())->last(), ['language'=> 'es'])}}"><img src="{{asset('images/icons/languages/Spain.png')}}">
+                            {{--                        <a class="es" href="#"><img src="{{asset('images/icons/languages/Spain.png')}}">--}}
+                            Español</a>
                     </li>
                     |
                     <li>
-                        <a class="en" href="#"><img src="{{asset('images/icons/languages/United-kingdom.png')}}">
+                        <a class="en" href="{{route(collect(request()->segments())->last(), ['language'=> 'en'])}}"><img src="{{asset('images/icons/languages/United-kingdom.png')}}">
+                            {{--                        <a class="en" href="#"><img src="{{asset('images/icons/languages/United-kingdom.png')}}">--}}
                             English</a>
                     </li>
                     |
@@ -131,7 +134,7 @@
 
                         <li id="li_email" style="cursor: pointer">
                             <a class="login faa-parent animated-hover" href="{{ route('login') }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
-                                Ingresar</a>
+                                Login</a>
                         </li>
                         {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
                     @else
@@ -140,7 +143,7 @@
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 <i class="fas fa-sign-out-alt faa-horizontal fa-slow" aria-hidden="true"></i>
-                                Desconectarse
+                                Logout
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -182,13 +185,13 @@
     <div class="header-bottom">
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="{{asset('images/logos/logo_Church_Photoshop_es.png')}}" class="img-responsive" alt=""/></a>
+                <a href="index.html"><img src="{{asset('images/logos/logo_Church_Photoshop_en.png')}}" class="img-responsive" alt=""/></a>
             </div>
 
             <!-- Authentication Links -->
             @guest
                 <div class="bottom-left">
-                    <a href="{{route('register')}}">¿NUEVO AQUÍ? REGÍSTRESE</a>
+                    <a href="{{route('register')}}">¿NEW HERE? REGISTER</a>
                 </div>
             @else
             @endguest
@@ -204,25 +207,25 @@
                 <span class="menu"> </span>
                 <ul id="ul_menu" class="menu cl-effect-15">
                     {{--<li><a id="a_index" href="index_es.html">Inicio</a></li>--}}
-                    <li><a href="{{ route('index_page') }}">Inicio</a></li>
+                    <li><a href="{{ route('index_page', ['language'=>'en']) }}">Home</a></li>
                     <label>|</label>
                     {{--<li><a id="a_our_mission" href="ourmission_es.html" data-hover="NUESTRA MISIÓN">NUESTRA MISIÓN</a></li>--}}
-                    <li><a href="{{ route('our_mission_page') }}">NUESTRA MISIÓN</a></li>
+                    <li><a href="{{ route('our_mission_page', ['language'=>'en']) }}">OUR MISSION</a></li>
                     <label>|</label>
                     {{--<li><a id="a_activities" href="activities_es.html" data-hover="ACTIVIDADES">ACTIVIDADES</a></li>--}}
-                    <li><a href="{{ route('activities_page') }}">ACTIVIDADES</a></li>
+                    <li><a href="{{ route('activities_page', ['language'=>'en']) }}">ACTIVITIES</a></li>
                     <label>|</label>
                     {{--<li><a id="a_ministries" href="ministries_es.html" data-hover="MINISTERIOS">MINISTERIOS</a></li>--}}
-                    <li><a href="{{ route('ministries_page') }}">MINISTERIOS</a></li>
+                    <li><a href="{{ route('ministries_page', ['language'=>'en']) }}">MINISTRIES</a></li>
                     <label>|</label>
                     {{--<li><a id="a_study" href="study_es.html" data-hover="ESTUDIO">ESTUDIO</a></li>--}}
-                    <li><a href="{{ route('study_page') }}">ESTUDIO</a></li>
+                    <li><a href="{{ route('study_page', ['language'=>'en']) }}">STUDY</a></li>
                     <label>|</label>
 
 
                     <li id="li_resources" class="dropdown" onmouseover="showUnorderedListHover()" onmouseout="hideUnorderedListMouseLeave()">
 
-                        <a href="#" class="dropdown-toggle hvr-underline-from-center" data-hover="RECURSOS">RECURSOS
+                        <a href="#" class="dropdown-toggle hvr-underline-from-center" data-hover="RESOURCES">RESOURCES
                             <b class="fa fa-caret-down"></b>
                         </a>
 
@@ -233,24 +236,24 @@
                                 <li>
                                     {{--<a id="a_library" href="https://www.cristianismohist.com/"  data-hover="LIBRERÍA" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>--}}
                                     <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i>
-                                        LIBRERÍA</a>
+                                        LIBRARY</a>
                                 </li>
 
-                                <li><a href=""><i class="fa fa-link"></i> ENLACES</a></li>
+                                <li><a href=""><i class="fa fa-link"></i> LINKS</a></li>
                             @else
                                 <li>
-                                    <a href="{{ route('user.user_page') }}"><i class="fa fa-user"></i> {{ Auth::user()->first_name}}
+                                    <a href="{{ route('user_page', ['language' => 'es']) }}"><i class="fa fa-user"></i> {{ Auth::user()->first_name}}
                                     </a>
                                 </li>
-                                <li><a href="{{ route('videos_page') }}"><i class="fa fa-video"></i> VIDEOS</a></li>
-                                <li><a href="{{ route('pictures_page') }}"><i class="fa fa-image"></i> FOTOS</a></li>
+                                <li><a href="{{ route('videos_page', ['language' => 'es']) }}"><i class="fa fa-video"></i> VIDEOS</a></li>
+                                <li><a href="{{ route('pictures_page', ['language' => 'es']) }}"><i class="fa fa-image"></i> PICTURES</a></li>
                                 <li>
                                     {{--<a id="a_library" href="https://www.cristianismohist.com/"  data-hover="LIBRERÍA" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>--}}
                                     <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i>
-                                        LIBRERÍA</a>
+                                        LIBRARY</a>
                                 </li>
 
-                                <li><a href=""><i class="fa fa-link"></i> ENLACES</a></li>
+                                <li><a href=""><i class="fa fa-link"></i> LINKS</a></li>
                         @endguest
                         <!-- /Dropdown Links -->
 
@@ -260,7 +263,7 @@
 
                     <!--<li><a id="a_photos" href="photos_es.html" data-hover="FOTOS">FOTOS</a></li><label>|</label>-->
                     {{--<li><a id="a_contact" href="contact_es.html" data-hover="CONTACTO">CONTACTO</a></li>--}}
-                    <li><a href="{{ route('contact_page') }}">CONTACTO</a></li>
+                    <li><a href="{{ route('contact_page',  ['language'=> 'en']) }}">CONTACT</a></li>
                     <div class="clearfix"></div>
                 </ul>
             </div>
@@ -290,10 +293,10 @@
 
 
         <div class="col-md-3 loc">
-            <h3>Nuestra Ubicación</h3>
+            <h3>Our Location</h3>
 
             <p id="p_church_name" class="">
-                Iglesia Bautista Buenas Nuevas
+                Baptist Church Buenas Nuevas
             </p>
 
             <p id="p_address1" class="">
@@ -304,7 +307,7 @@
                 Miami, FL 33125, USA
             </p>
 
-            <p><span>Teléfono :</span> (305) 635-8058</p>
+            <p><span>Phone :</span> (305) 635-8058</p>
             <span>Email : </span><a href="mailto:example@gmail.com">info@company.com</a>
         </div>
 
@@ -315,12 +318,12 @@
         </div>
 
         <div class="col-md-3 or">
-            <h3>Nuestra Iglesia</h3>
-            <li><a href="{{ route('our_mission_page') }}">• Nuestra misión</a></li>
-            <li><a href="{{ route('activities_page') }}">• Actividades</a></li>
-            <li><a href="{{ route('ministries_page') }}">• Ministerios</a></li>
-            <li><a href="{{ route('study_page') }}">• Estudio</a></li>
-            <li><a href="{{ route('contact_page') }}">• Contacto</a></li>
+            <h3>Our Church</h3>
+            <li><a href="{{ route('our_mission_page', ['language'=>'en']) }}">• Out mission</a></li>
+            <li><a href="{{ route('activities_page', ['language'=>'en']) }}">• Activities</a></li>
+            <li><a href="{{ route('ministries_page', ['language'=>'en']) }}">• Minsiteries</a></li>
+            <li><a href="{{ route('study_page', ['language'=>'en']) }}">• Study</a></li>
+            <li><a href="{{ route('contact_page', ['language'=>'en']) }}">• Contact</a></li>
         </div>
 
         <div class="col-md-3 con">

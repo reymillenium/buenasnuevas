@@ -1,4 +1,8 @@
-@extends('layouts.general_layout')
+<?php
+    $layout_language = isset($language) ? $language : 'es';
+?>
+
+@extends('layouts.general_layout_' . "{$layout_language}")
 
 @section('page_title', "Nuestra misión")
 
@@ -21,7 +25,7 @@
                 <a href="single.html" class="vie">View More</a>
             </div>
             <div class="col-md-5 mission-right">
-                <img src="images/1.jpg" class="img-responsive" alt=""/>
+                <img src="{{asset('images/1.jpg')}}" class="img-responsive" alt=""/>
             </div>
             <div class="clearfix"></div>
             <div class="mission-bottom">

@@ -1,4 +1,8 @@
-@extends('layouts.general_layout')
+<?php
+    $layout_language = isset($language) ? $language : 'es';
+?>
+
+@extends('layouts.general_layout_' . "{$layout_language}")
 
 @section('page_title', "Registro")
 
@@ -6,6 +10,7 @@
     <div class="study">
         <div class="container">
             <div class="row">
+
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-heading">Teclee sus datos personales</div>
@@ -76,6 +81,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

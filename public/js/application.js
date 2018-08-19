@@ -73,11 +73,23 @@ function scrollingIcon() {
 // Flexisel. Responsive Carousel jQuery Plugin. Videitos en la pagina de inicio
 function flexisel() {
 
-    /* Verifico que sea la página de inicio */
-    if (location.href.split("/").slice(-1).toString() === 'index_page') {
+
+    // Determino el nombre de la pagina en que me encuentro
+    $pageName = location.href.split("/").slice(-1).toString();
+
+    /* Verifico que sea la página de inicio o la default (sin nombre) */
+    // if (location.href.split("/").slice(-1).toString() === 'index_page') {
+
+
+    if (($pageName === '') || ($pageName === 'index_page')) {
+
+        // alert($pageName);
 
         // Verifico que exista el componente
         if ($("#flexiselDemo3")) {
+
+            // alert('Encontró a flexiselDemo3');
+
 
             $("#flexiselDemo3").flexisel({
                 visibleItems: 4,

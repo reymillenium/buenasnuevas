@@ -27,37 +27,57 @@
         }
         
         /**
+         * Shows the index page as the default page.
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function show_default_page()
+        {
+            // return view('index_page');
+            // $language = 'es';
+            // return view('index_page', compact('language'));
+            return redirect(route('index_page', ['language' => 'es']));
+            
+        }
+        
+        
+        /**
          * Shows the index page.
          *
          * @return \Illuminate\Http\Response
          */
-        public function show_index_page()
+        public function show_index_page($language)
         {
-            return view('index_page');
+            // return view('index_page');
+            return view('index_page', compact('language'));
         }
         
         
-        public function show_our_mission_page()
+        public function show_our_mission_page($language)
         {
-            return view('our_mission_page');
+            // return view('our_mission_page');
+            return view('our_mission_page', compact('language'));
         }
         
         
-        public function show_activities_page()
+        public function show_activities_page($language)
         {
-            return view('activities_page');
+            // return view('activities_page');
+            return view('activities_page', compact('language'));
         }
         
         
-        public function show_ministries_page()
+        public function show_ministries_page($language)
         {
-            return view('ministries_page');
+            // return view('ministries_page');
+            return view('ministries_page', compact('language'));
         }
         
         
-        public function show_study_page()
+        public function show_study_page($language)
         {
-            return view('study_page');
+            // return view('study_page');
+            return view('study_page', compact('language'));
         }
         
     }

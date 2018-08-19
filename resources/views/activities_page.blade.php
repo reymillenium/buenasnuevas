@@ -1,4 +1,8 @@
-@extends('layouts.general_layout')
+<?php
+    $layout_language = isset($language) ? $language : 'es';
+?>
+
+@extends('layouts.general_layout_' . "{$layout_language}")
 
 @section('page_title', "Actividades")
 
@@ -12,7 +16,7 @@
 
             <div class="prayer-top">
                 <div class="col-md-4 prayer-left">
-                    <img src="images/EscuelaDominical.jpg" class="img-responsive" alt=""/>
+                    <img src="{{asset('images/EscuelaDominical.jpg')}}" class="img-responsive" alt=""/>
                 </div>
                 <div class="col-md-8 prayer-right">
                     <h3>ESCUELA DOMINICAL</h3>
@@ -35,7 +39,7 @@
 
             <div class="prayer-top">
                 <div class="col-md-4 prayer-left">
-                    <img src="images/ServicioDeAdoracion.jpg" class="img-responsive" alt=""/>
+                    <img src="{{asset('images/ServicioDeAdoracion.jpg')}}" class="img-responsive" alt=""/>
                 </div>
                 <div class="col-md-8 prayer-right">
                     <h3>Servicio de Adoración</h3>
@@ -58,7 +62,7 @@
 
             <div class="prayer-top">
                 <div class="col-md-4 prayer-left">
-                    <img src="images/CoroOriginal_426X400.jpg" class="img-responsive" alt=""/>
+                    <img src="{{asset('images/CoroOriginal_426X400.jpg')}}" class="img-responsive" alt=""/>
                 </div>
                 <div class="col-md-8 prayer-right">
                     <h3>Ensayo del Coro</h3>
@@ -81,7 +85,7 @@
 
             <div class="prayer-top">
                 <div class="col-md-4 prayer-left">
-                    <img src="images/9.jpg" class="img-responsive" alt=""/>
+                    <img src="{{asset('images/9.jpg')}}" class="img-responsive" alt=""/>
                 </div>
                 <div class="col-md-8 prayer-right">
                     <h3>Estudio Bíblico y Adoración</h3>

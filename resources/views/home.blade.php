@@ -1,4 +1,8 @@
-@extends('layouts.general_layout')
+<?php
+    $layout_language = isset($language) ? $language : 'es';
+?>
+
+@extends('layouts.general_layout_' . "{$layout_language}")
 
 @section('page_title', "Inicio")
 

@@ -1,4 +1,8 @@
-@extends('layouts.general_layout')
+<?php
+    $layout_language = isset($language) ? $language : 'es';
+?>
+
+@extends('layouts.general_layout_' . "{$layout_language}")
 
 @section('page_title', "Inicio")
 
@@ -7,12 +11,14 @@
     <div class="rooted">
         <div class="container">
 
+            <h3>Una comunidad unida, en la búsqueda del señor</h3>
+
             <div class="single-page-artical">
 
                 <div class="artical-content">
-                    <h3>Una comunidad unida, en la búsqueda del señor</h3>
 
-                    <img class="img-responsive" src="images/14.jpg" title="banner1">
+                    {{--<img class="img-responsive" src="images/14.jpg" title="banner1">--}}
+                    <img class="img-responsive" src="{{asset('images/buenasnuevas_church_front01.jpg')}}" title="banner1">
 
                     <p align="justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
@@ -83,10 +89,10 @@
                             </ul>
 
 
-                            <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+                            <script type="text/javascript" src="{{asset('js/jquery.flexisel.js')}}"></script>
 
                         </div>
-                        <a href="single.html" class="vie">Ver Todos</a>
+                        <a href="{{ route('videos_page', ['language' => 'es']) }}" class="vie">Ver Todos</a>
                         <!-- recent -->
 
                     </div>

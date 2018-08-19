@@ -1,4 +1,8 @@
-@extends('layouts.general_layout')
+<?php
+    $layout_language = isset($language) ? $language : 'es';
+?>
+
+@extends('layouts.general_layout_' . "{$layout_language}")
 
 @section('page_title', "Ministerios")
 
@@ -12,7 +16,7 @@
                     <h3>Services Overview</h3>
                     <div class="col-md-4 service_grid">
                         <div class="view view-tenth">
-                            <a href="{{route('index_page')}}">
+                            <a href="{{route('index_page', ['language'=>'es'])}}">
                                 <div class="inner_content clearfix">
                                     <div class="product_image">
                                         <img src="{{asset('images/Bautizo.jpg')}}" class="img-responsive" alt=""/>
@@ -37,7 +41,7 @@
                     </div>
                     <div class="col-md-4 service_grid">
                         <div class="view view-tenth">
-                            <a href="{{route('index_page')}}">
+                            <a href="{{route('index_page', ['language'=>'es'])}}">
                                 <div class="inner_content clearfix">
                                     <div class="product_image">
                                         <img src="{{asset('images/Boda.jpg')}}" class="img-responsive" alt=""/>
@@ -62,7 +66,7 @@
                     </div>
                     <div class="col-md-4 service_grid span_55">
                         <div class="view view-tenth">
-                            <a href="{{route('index_page')}}">
+                            <a href="{{route('index_page', ['language'=>'es'])}}">
                                 <div class="inner_content clearfix">
                                     <div class="product_image">
                                         <img src="{{asset('images/ServicioDeAdoracion.jpg')}}" class="img-responsive" alt=""/>
@@ -96,7 +100,7 @@
                     <div class="col-md-4 grid_7">
                         <div class="element">
                             <div class="view view-tenth">
-                                <a href="{{route('index_page')}}">
+                                <a href="{{route('index_page', ['language'=>'es'])}}">
                                     <div class="inner_content clearfix">
                                         <div class="product_image">
                                             <img src="{{asset('images/5.jpg')}}" class="img-responsive" alt=""/>
@@ -121,7 +125,7 @@
                     <div class="col-md-4 grid_7">
                         <div class="element">
                             <div class="view view-tenth">
-                                <a href="{{route('index_page')}}">
+                                <a href="{{route('index_page', ['language'=>'es'])}}">
                                     <div class="inner_content clearfix">
                                         <div class="product_image">
                                             <img src="{{asset('images/7.jpg')}}" class="img-responsive" alt=""/>
@@ -146,7 +150,7 @@
                     <div class="col-md-4 grid_7">
                         <div class="element">
                             <div class="view view-tenth">
-                                <a href="{{route('index_page')}}">
+                                <a href="{{route('index_page', ['language'=>'es'])}}">
                                     <div class="inner_content clearfix">
                                         <div class="product_image">
                                             <img src="{{asset('images/9.jpg')}}" class="img-responsive" alt=""/>
