@@ -24,7 +24,7 @@
         return [
             // 'profession_id' => rand(1, $professions_amount),
             'first_name' => $faker->firstName($gender),
-            // 'second_name' => $faker->name,
+            'second_name' => $faker->name,
             'last_name' => $faker->lastName,
             
             'email' => $faker->unique()->safeEmail,

@@ -22,15 +22,17 @@
                 // $table->unsignedInteger('user_profession_id');
                 // $table->foreign('profession_id')->references('id')->on('professions');
     
-                $table->string('first_name', 48);
+                $table->string('name', 48);
                 $table->string('second_name', 48)->nullable();
-                $table->string('last_name', 48);
+                $table->string('last_name', 64);
+    
+                $table->string('phone', 21)->unique();
+                $table->string('gender', 6);
                 
                 $table->string('email', 48)->unique();
                 $table->string('password', 255);
     
-                $table->string('phone', 21)->unique();
-                $table->string('gender', 6);
+
                 // $table->boolean('is_active');
                 $table->string('kind', 24)->default('guest');
                 // $table->string('website', 255)->nullable();
