@@ -22,7 +22,7 @@
                 // $table->unsignedInteger('user_profession_id');
                 // $table->foreign('profession_id')->references('id')->on('professions');
     
-                $table->string('name', 48);
+                $table->string('first_name', 48);
                 $table->string('second_name', 48)->nullable();
                 $table->string('last_name', 64);
     
