@@ -18,6 +18,28 @@ function asignarEventos() {
     // Flexisel. Responsive Carousel jQuery Plugin. Videos en index_page. De último para q no intervenga con la carga de los header
     flexisel();
 
+
+    // Uso de ddList para mostrar banderas en los select
+    // $('#slct_country_id').ddlist({
+    //     width: 345
+    // });
+
+    // Uso de Image Combo Box para mostrar los dos sexos en un select
+    $('#slct_user_gender').msDropDown();
+
+    // Uso de Image Combo Box para mostrar un listado de los países y sus banderas en un select
+    // $('#slct_country_id').msDropDown({
+    //     // selectedIndex: 203
+    //
+    // })
+
+    // document.getElementById("slct_country_id").selectedIndex = "4";
+
+    // $('#slct_country_id').set("selectedIndex", 2);
+
+    var oDropdown = $("#slct_country_id").msDropdown().data("dd");
+    oDropdown.set("selectedIndex", 235);
+
 }
 
 /*----------------------------------------------------------------------------------------------------------------------

@@ -31,8 +31,16 @@
     <!-- Plugin Swipebox para la Galeria de Imágenes -->
     <script src="{{asset('js/jquery.swipebox.min.js')}}"></script>
 
+    <!-- JQuery Plugins para mostrar imágenes en los select list  -->
+    {{-- ddSlick --}}
+    {{--    <script src="{{asset('js/jquery.ddslick.min.js')}}"></script>--}}
+    <!-- ddList  -->
+    <script type="text/javascript" src="{{asset('js/service.ddlist.jquery.js')}}"></script>
+    <!-- Image Combo Box  -->
+    <script type="text/javascript" src="{{asset('ms-Dropdown-master/js/msdropdown/jquery.dd.js')}}"></script>
+
     <!-- ** Dirección del fichero .js con funciones y eventos definidos por el Programador ** -->
-    <script src="{{asset('js/application.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/application.js')}}"></script>
 
     <!-- ** Uso de HighCharts para Graficaciones ** -->
 
@@ -67,6 +75,15 @@
 
     {{-- Swipebox: Gelería de Imágenes --}}
     <link rel="stylesheet" href="{{asset('css/swipebox.css')}}">
+
+    {{-- Hojas de estilo para mostrar imágenes en los select list --}}
+    {{-- ddList --}}
+    <link rel="stylesheet" href="{{asset('css/service.ddlist.jquery.css')}}">
+    {{-- Image Combo Box --}}
+    <link rel="stylesheet" href="{{asset('ms-Dropdown-master/css/msdropdown/dd.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('ms-Dropdown-master/css/msdropdown/skin2.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('ms-Dropdown-master/css/msdropdown/flags.css')}}">--}}
+
 
 </head>
 

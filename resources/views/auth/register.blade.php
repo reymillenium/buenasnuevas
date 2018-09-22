@@ -1,5 +1,11 @@
 <?php
+use BuenasNuevas\Country;
+
 $layout_language = isset($language) ? $language : 'es';
+
+// Obtengo todas los países en la BD
+$countries = Country::all();
+
 ?>
 
 @extends('layouts.general_layout_' . "{$layout_language}")
@@ -82,7 +88,7 @@ $layout_language = isset($language) ? $language : 'es';
                                     <div class="col-md-6">
                                         {{--<input id="gender" type="text" class="form-control" name="gender" value="{{ old('gender') }}" required autofocus>--}}
 
-                                        <select id="slct_user_gender selectpicker" class="form-control col-md-9" name="gender" title="Escoja el sexo..." @if($errors->any() && $errors->first() == $errors->first('gender')) autofocus style="border-color: red;" @endif>>
+                                        <select id="slct_user_gender" class="form-control col-md-9" name="gender" title="Escoja el sexo..." @if($errors->any() && $errors->first() == $errors->first('gender')) autofocus style="border-color: red;" @endif>>
 
                                             <option value="" selected disabled hidden>Escoja el sexo</option>
 
@@ -99,6 +105,34 @@ $layout_language = isset($language) ? $language : 'es';
                                         @if ($errors->has('gender'))
                                             <span class="help-block">
                                         <strong>{{ $errors->first('gender') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                <div class="form-group{{ $errors->has('country_id') ? ' has-error' : '' }}">
+                                    <label for="country_id" class="col-md-4 control-label">País</label>
+
+                                    <div class="col-md-6">
+
+                                        <select id="slct_country_id" class="form-control col-md-9 selectpicker" name="country_id" title="Escoja su país..." @if($errors->any() && $errors->first() == $errors->first('country_id')) autofocus style="border-color: red;" @endif>>
+
+                                            {{--<option value="" selected disabled hidden>--}}
+                                                {{--Escoja su país--}}
+                                            {{--</option>--}}
+
+                                            @foreach( $countries as $country)
+                                                <option value="{{$country->id}}" data-image="{{asset('images/country-flags-master/flags/' . $country->code . '.png')}}"
+                                                        @if(old('country_id') == $country->id) selected @endif>
+                                                    {{$country->name}}
+                                                </option>
+                                            @endforeach
+
+                                        </select>
+
+                                        @if ($errors->has('country_id'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('country_id') }}</strong>
                                     </span>
                                         @endif
                                     </div>

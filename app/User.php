@@ -18,13 +18,14 @@
             'first_name',
             'second_name',
             'last_name',
-    
+            
             'phone',
             'gender',
+            'country_id',
             
             'email',
             'password',
-
+        
         ];
         
         /**
@@ -35,4 +36,14 @@
         protected $hidden = [
             'password', 'remember_token',
         ];
+        
+        public function country()
+        {
+            // Especifico que un User pertenece a una Profession
+            // return $this->belongsTo(Profession::class, 'profession_id');
+            // Especifico que un User pertenece a un Country
+            return $this->belongsTo(Country::class, 'country_id', 'id');
+        }
+        
+        
     }

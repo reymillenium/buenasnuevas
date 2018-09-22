@@ -1,6 +1,7 @@
 <?php
     
     use Faker\Generator as Faker;
+    use BuenasNuevas\Country;
     
     /*
     |--------------------------------------------------------------------------
@@ -18,11 +19,12 @@
         $kinds = ['administrator', 'operator', 'guest'];
         $gender = $faker->randomElements(['male', 'female'])[0];
         // $professions_amount = Profession::count();
+        $countries_amount = Country::count();
         
         // dd($gender[0]);
         
         return [
-            // 'profession_id' => rand(1, $professions_amount),
+            'country_id' => rand(1, $countries_amount),
             'first_name' => $faker->firstName($gender),
             'second_name' => $faker->name,
             'last_name' => $faker->lastName,

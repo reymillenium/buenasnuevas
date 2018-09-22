@@ -87,6 +87,7 @@
                 
                 'phone' => ['required', 'numeric', 'unique:users,phone', "digits_between:$phoneMinLenght,$phoneMaxLenght"],
                 'gender' => ['required', 'in:male,female'],
+                'country_id' => ['required'],
                 
                 'email' => ['required', 'email', 'unique:users,email', "max:$emailMaxLenght"],
                 'password' => ['required', "min:$passwordMinLenght", "max:$passwordMaxLenght"],
@@ -115,6 +116,8 @@
                 
                 'gender.required' => 'Debe escoger su sexo (género)',
                 'gender.in' => 'El sexo (género) solo puede ser masculino o femenino',
+                
+                'country_id.required' => 'Debe escoger su país',
                 
                 'email.required' => 'Debe teclear su email',
                 'email.email' => 'El email debe poseer un formato adecuado. Del tipo: email_example@domain.com',
@@ -162,6 +165,7 @@
                 'last_name' => $data['last_name'],
                 'phone' => $data['phone'],
                 'gender' => $data['gender'],
+                'country_id' => $data['country_id'],
                 'email' => $data['email'],
                 'password' => bcrypt($data['password']),
             ]);

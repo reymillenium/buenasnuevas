@@ -678,7 +678,7 @@ i.sett {
     width: 32.6%;
     float: left;
     margin-right: 1%;
-} 
+}
 
 .contact-form-row div span, .contact-form-row2 span {
     font-size: 1.1em;
@@ -691,7 +691,7 @@ i.sett {
 
 .contact-form-row div input[type="text"]{
     width:100%;
-    padding:1em;	
+    padding:1em;
     font-family: 'Droid Sans', sans-serif;
     border:1px solid #EEE;
     -webkit-appearance:none;
@@ -715,7 +715,7 @@ i.sett {
 
 .contact-form-row2 textarea{
     width:100%;
-    padding:1em;	
+    padding:1em;
     font-family: 'Droid Sans', sans-serif;
     border:1px solid #EEE;
     -webkit-appearance:none;
@@ -962,12 +962,12 @@ div#portfoliolist {
     overflow: hidden;
     visibility: hidden;
     width: 0;
-    height: 0; 
+    height: 0;
 }
 
 .row:after,
 .clearfix:after {
-    clear: both; 
+    clear: both;
 }
 
 .clear {
@@ -1006,7 +1006,7 @@ div#portfoliolist {
 .grid_box a:hover .zoom-icon {
     top: 0;
     opacity: 1;
-    filter: alpha(opacity=99); 
+    filter: alpha(opacity=99);
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=99)";
 }
 
@@ -1049,7 +1049,7 @@ div#portfoliolist {
     margin: 0;
     font-size: 1.2em;
     text-transform: uppercase;
-} 
+}
 
 a.b-home{
     background:#58593c;
@@ -1311,7 +1311,7 @@ a.vie {
     background: #f5cd8a;
     overflow: hidden;
     width: 40%;
-    display: block;	
+    display: block;
     font-size: 1em;
 }
 
@@ -2695,7 +2695,7 @@ input[type="submit"],.w3l_header_left ul li a,.related-post-right h4 a,.comments
 /* --------------------- The Font Awesome icons ------------------------------- */
 .w3l_header_left ul li i {
     padding-right: 1em;
-    /*color: #00a98f;*/ 
+    /*color: #00a98f;*/
     color: white;
     /*color: red;*/
 }
@@ -2873,10 +2873,10 @@ ul.languages img  {
 .menu ul li a:hover, .menu ul li:hover > a{
     /*background:#f0f0f0;*/
     background:#F5CD8A;
-    
+
     /*border-left:3px solid #9CA3DA;*/
     border-left:3px solid #C9A76D;
-    
+
     color:#797979;
     /*color:black;*/
 }
@@ -2889,3 +2889,4 @@ ul.languages img  {
     left: 149px;
     top: 0px;
 }
+
