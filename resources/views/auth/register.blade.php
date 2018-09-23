@@ -99,19 +99,17 @@ $countries = Country::all();
                                             Genre @endif</label>
 
                                     <div class="col-md-6">
-                                        {{--<input id="gender" type="text" class="form-control" name="gender" value="{{ old('gender') }}" required autofocus>--}}
-
                                         <select id="slct_user_gender" class="form-control col-md-9" name="gender" title="Escoja el sexo..." @if($errors->any() && $errors->first() == $errors->first('gender')) autofocus style="border-color: red;" @endif>>
 
                                             <option value="" selected disabled hidden><?php echo($lang == 'es' ? 'Escoja el sexo' : ($lang == 'en' ? 'Choose the gender' : ($lang == 'fr' ? 'Choisissez le genre' : 'Escoja el sexo'))); ?></option>
 
-                                            <option value="male" @if(old('gender') == 'male') selected @endif>&male;
+                                            <option value="male" data-image="{{asset('images/icons/gender_icons/male_16x16.png')}}" @if(old('gender') == 'male') selected @endif>
                                                 @if ($lang == 'es') Masculino @elseif($lang == 'en')
                                                     Male @elseif($lang == 'fr') Mâle @endif
                                             </option>
 
-                                            <option value="female" @if(old('gender') == 'female') selected @endif>
-                                                &female; @if ($lang == 'es') Femenino @elseif($lang == 'en')
+                                            <option value="female" data-image="{{asset('images/icons/gender_icons/female_16x16.png')}}" @if(old('gender') == 'female') selected @endif>
+                                                @if ($lang == 'es') Femenino @elseif($lang == 'en')
                                                     Female @elseif($lang == 'fr') Femme @endif
                                             </option>
 

@@ -97,7 +97,7 @@
             // return view('register');
             // $language = 'en';
             // return view('auth.login', compact('language'));
-            return redirect(route('login_page', ['language' => 'en']));
+            return redirect(route('login_page', ['language' => 'es']));
         }
         
         
