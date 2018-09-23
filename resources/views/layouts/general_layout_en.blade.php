@@ -4,7 +4,6 @@
 
     <title>@yield('page_title') - Baptist Church Buenas Nuevas</title>
 
-
     <!-- *** Basic characteristics of the web page. *** -->
     <meta charset="UTF-8">
     <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
@@ -31,8 +30,12 @@
     <!-- Plugin Swipebox para la Galeria de Imágenes -->
     <script src="{{asset('js/jquery.swipebox.min.js')}}"></script>
 
+    <!-- JQuery Plugins para mostrar imágenes en los select list  -->
+    <!-- Image Combo Box  -->
+    <script type="text/javascript" src="{{asset('ms-Dropdown-master/js/msdropdown/jquery.dd.js')}}"></script>
+
     <!-- ** Dirección del fichero .js con funciones y eventos definidos por el Programador ** -->
-    <script src="{{asset('js/application.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/application.js')}}"></script>
 
     <!-- ** Uso de HighCharts para Graficaciones ** -->
 
@@ -67,6 +70,10 @@
 
     {{-- Swipebox: Gelería de Imágenes --}}
     <link rel="stylesheet" href="{{asset('css/swipebox.css')}}">
+
+    {{-- Hojas de estilo para mostrar imágenes en los select list --}}
+    {{-- Image Combo Box --}}
+    <link rel="stylesheet" href="{{asset('ms-Dropdown-master/css/msdropdown/dd.css')}}">
 
 </head>
 
@@ -122,18 +129,15 @@
                     </li>
                     |
                     <li>
-                        <a class="fr" href="{{route(collect(request()->segments())->last(), ['language'=> 'fr'])}}"><img src="{{asset('images/icons/languages/France.png')}}"> Français</a>
+                        <a class="fr" href="{{route(collect(request()->segments())->last(), ['language'=> 'fr'])}}"><img src="{{asset('images/icons/languages/France.png')}}">
+                            Français</a>
                     </li>
                     |
 
                     {{--<!-- Authentication Links -->--}}
                     @guest
-                        {{--<li>--}}
-                        {{--<a class="login" href="{{ route('login') }}">Ingresar</a>--}}
-                        {{--</li>--}}
-
                         <li id="li_email" style="cursor: pointer">
-                            <a class="login faa-parent animated-hover" href="{{ route('login') }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
+                            <a class="login faa-parent animated-hover" href="{{ route('login_page', ['language' => 'en']) }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
                                 Login</a>
                         </li>
                         {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
@@ -188,10 +192,16 @@
                 <a href="index.html"><img src="{{asset('images/logos/logo_Church_Photoshop_en.png')}}" class="img-responsive" alt=""/></a>
             </div>
 
-            <!-- Authentication Links -->
+        <?php
+
+        $language = 'en';
+        ?>
+
+
+        <!-- Authentication Links -->
             @guest
                 <div class="bottom-left">
-                    <a href="{{route('register')}}">¿NEW HERE? REGISTER</a>
+                    <a href="{{route('register_page', ['language' => 'en'])}}">¿NEW HERE? REGISTER</a>
                 </div>
             @else
             @endguest
@@ -245,8 +255,12 @@
                                     <a href="{{ route('user_page', ['language' => 'es']) }}"><i class="fa fa-user"></i> {{ Auth::user()->first_name}}
                                     </a>
                                 </li>
-                                <li><a href="{{ route('videos_page', ['language' => 'es']) }}"><i class="fa fa-video"></i> VIDEOS</a></li>
-                                <li><a href="{{ route('pictures_page', ['language' => 'es']) }}"><i class="fa fa-image"></i> PICTURES</a></li>
+                                <li>
+                                    <a href="{{ route('videos_page', ['language' => 'es']) }}"><i class="fa fa-video"></i>
+                                        VIDEOS</a></li>
+                                <li>
+                                    <a href="{{ route('pictures_page', ['language' => 'es']) }}"><i class="fa fa-image"></i>
+                                        PICTURES</a></li>
                                 <li>
                                     {{--<a id="a_library" href="https://www.cristianismohist.com/"  data-hover="LIBRERÍA" target="_newtab"><i class="fa fa-book-open"></i> LIBRERÍA</a>--}}
                                     <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i>

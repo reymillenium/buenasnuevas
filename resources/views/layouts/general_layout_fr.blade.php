@@ -4,7 +4,6 @@
 
     <title>@yield('page_title') - Iglesia Bautista Buenas Nuevas</title>
 
-
     <!-- *** Basic characteristics of the web page. *** -->
     <meta charset="UTF-8">
     <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
@@ -23,16 +22,20 @@
     <script src="{{asset('sliderengine/initslider-1.js')}}"></script>
 
     <!-- Plugin de jquery para las animaciones -->
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
 
-<!-- ** Dirección del fichero .js del plugin Alertify ** -->
+    <!-- ** Dirección del fichero .js del plugin Alertify ** -->
     <script type="text/javascript" src="{{asset('alertify/alertify-1.11.1/alertify.min.js')}}"></script>
 
     <!-- Plugin Swipebox para la Galeria de Imágenes -->
     <script src="{{asset('js/jquery.swipebox.min.js')}}"></script>
 
+    <!-- JQuery Plugins para mostrar imágenes en los select list  -->
+    <!-- Image Combo Box  -->
+    <script type="text/javascript" src="{{asset('ms-Dropdown-master/js/msdropdown/jquery.dd.js')}}"></script>
+
     <!-- ** Dirección del fichero .js con funciones y eventos definidos por el Programador ** -->
-    <script src="{{asset('js/application.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/application.js')}}"></script>
 
     <!-- ** Uso de HighCharts para Graficaciones ** -->
 
@@ -67,6 +70,10 @@
 
     {{-- Swipebox: Gelería de Imágenes --}}
     <link rel="stylesheet" href="{{asset('css/swipebox.css')}}">
+
+    {{-- Hojas de estilo para mostrar imágenes en los select list --}}
+    {{-- Image Combo Box --}}
+    <link rel="stylesheet" href="{{asset('ms-Dropdown-master/css/msdropdown/dd.css')}}">
 
 </head>
 
@@ -128,12 +135,8 @@
 
                     {{--<!-- Authentication Links -->--}}
                     @guest
-                        {{--<li>--}}
-                        {{--<a class="login" href="{{ route('login') }}">Ingresar</a>--}}
-                        {{--</li>--}}
-
                         <li id="li_email" style="cursor: pointer">
-                            <a class="login faa-parent animated-hover" href="{{ route('login') }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
+                            <a class="login faa-parent animated-hover" href="{{ route('login_page', ['language' => 'fr']) }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
                                 Entrer</a>
                         </li>
                         {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
@@ -191,7 +194,7 @@
             <!-- Authentication Links -->
             @guest
                 <div class="bottom-left">
-                    <a href="{{route('register')}}">NOUVEAU ICI? S'INSCRIRE</a>
+                    <a href="{{route('register_page', ['language' => 'fr'])}}">NOUVEAU ICI? S'INSCRIRE</a>
                 </div>
             @else
             @endguest

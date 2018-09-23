@@ -4,7 +4,6 @@
 
     <title>@yield('page_title') - Iglesia Bautista Buenas Nuevas</title>
 
-
     <!-- *** Basic characteristics of the web page. *** -->
     <meta charset="UTF-8">
     <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
@@ -23,19 +22,15 @@
     <script src="{{asset('sliderengine/initslider-1.js')}}"></script>
 
     <!-- Plugin de jquery para las animaciones -->
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
 
-<!-- ** Dirección del fichero .js del plugin Alertify ** -->
+    <!-- ** Dirección del fichero .js del plugin Alertify ** -->
     <script type="text/javascript" src="{{asset('alertify/alertify-1.11.1/alertify.min.js')}}"></script>
 
     <!-- Plugin Swipebox para la Galeria de Imágenes -->
     <script src="{{asset('js/jquery.swipebox.min.js')}}"></script>
 
     <!-- JQuery Plugins para mostrar imágenes en los select list  -->
-    {{-- ddSlick --}}
-    {{--    <script src="{{asset('js/jquery.ddslick.min.js')}}"></script>--}}
-    <!-- ddList  -->
-    <script type="text/javascript" src="{{asset('js/service.ddlist.jquery.js')}}"></script>
     <!-- Image Combo Box  -->
     <script type="text/javascript" src="{{asset('ms-Dropdown-master/js/msdropdown/jquery.dd.js')}}"></script>
 
@@ -77,13 +72,8 @@
     <link rel="stylesheet" href="{{asset('css/swipebox.css')}}">
 
     {{-- Hojas de estilo para mostrar imágenes en los select list --}}
-    {{-- ddList --}}
-    <link rel="stylesheet" href="{{asset('css/service.ddlist.jquery.css')}}">
     {{-- Image Combo Box --}}
     <link rel="stylesheet" href="{{asset('ms-Dropdown-master/css/msdropdown/dd.css')}}">
-{{--    <link rel="stylesheet" href="{{asset('ms-Dropdown-master/css/msdropdown/skin2.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('ms-Dropdown-master/css/msdropdown/flags.css')}}">--}}
-
 
 </head>
 
@@ -145,12 +135,8 @@
 
                     {{--<!-- Authentication Links -->--}}
                     @guest
-                        {{--<li>--}}
-                        {{--<a class="login" href="{{ route('login') }}">Ingresar</a>--}}
-                        {{--</li>--}}
-
                         <li id="li_email" style="cursor: pointer">
-                            <a class="login faa-parent animated-hover" href="{{ route('login') }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
+                            <a class="login faa-parent animated-hover" href="{{ route('login_page', ['language' => 'es']) }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
                                 Ingresar</a>
                         </li>
                         {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
@@ -208,7 +194,7 @@
             <!-- Authentication Links -->
             @guest
                 <div class="bottom-left">
-                    <a href="{{route('register')}}">¿NUEVO AQUÍ? REGÍSTRESE</a>
+                    <a href="{{route('register_page', ['language' => 'es'])}}">¿NUEVO AQUÍ? REGÍSTRESE</a>
                 </div>
             @else
             @endguest

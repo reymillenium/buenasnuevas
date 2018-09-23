@@ -1,8 +1,8 @@
 <?php
-    $layout_language = isset($language) ? $language : 'es';
+    $lang = isset($language) ? $language : 'es';
 ?>
 
-@extends('layouts.general_layout_' . "{$layout_language}")
+@extends('layouts.general_layout_' . "{$lang}")
 
 @section('page_title', "Inicio")
 
@@ -92,7 +92,7 @@
                             <script type="text/javascript" src="{{asset('js/jquery.flexisel.js')}}"></script>
 
                         </div>
-                        <a href="{{ route('videos_page', ['language' => $layout_language]) }}" class="vie">Ver Todos</a>
+                        <a href="{{ route('videos_page', ['language' => $lang]) }}" class="vie">Ver Todos</a>
                         <!-- recent -->
 
                     </div>

@@ -12,6 +12,7 @@
     */
     
     use BuenasNuevas\User;
+    use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
     
     # ** Rutas del invitado anónimo **
@@ -50,8 +51,13 @@
     
     # ** Rutas del Usuario autenticado **
     
-    // Rutas de autenticación
+    // ** Rutas de autenticación **
     Auth::routes();
+    
+    // Reescribimos la ruta get de register. Los ponemos después de las rutas Auth originales
+    Route::get( '{language}/register_page', 'GuestController@show_register_page')->name('register_page');
+    Route::get( '{language}/login_page', 'GuestController@show_login_page')->name('login_page');
+    Route::get( 'login', 'GuestController@login')->name('login');
     
     // Muestra la página con los datos del usuario autenticado
     // Route::get('/user_page', 'UserController@show_user_page')->name('user.user_page');

@@ -80,4 +80,25 @@
             return view('study_page', compact('language'));
         }
         
+        public function show_register_page($language)
+        {
+            // return view('register');
+            return view('auth.register', compact('language'));
+        }
+        
+        public function show_login_page($language)
+        {
+            // return view('register');
+            return view('auth.login', compact('language'));
+        }
+        
+        public function login()
+        {
+            // return view('register');
+            // $language = 'en';
+            // return view('auth.login', compact('language'));
+            return redirect(route('login_page', ['language' => 'en']));
+        }
+        
+        
     }

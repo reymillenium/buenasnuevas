@@ -1,8 +1,8 @@
 <?php
-    $layout_language = isset($language) ? $language : 'es';
+    $lang = isset($language) ? $language : 'es';
 ?>
 
-@extends('layouts.general_layout_' . "{$layout_language}")
+@extends('layouts.general_layout_' . "{$lang}")
 
 @section('page_title', "Estudio")
 
