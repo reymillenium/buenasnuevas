@@ -27,11 +27,15 @@ $countries = Country::all();
                             <form role="form" class="form-horizontal" method="POST" action="{{ route('register') }}">
                                 {{ csrf_field() }}
 
+
+
+
+
+
                                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                     <label for="first_name" class="col-md-4 control-label">@if ($lang == 'es')
                                             Nombre @elseif($lang == 'en') First name @elseif($lang == 'fr')
                                             Prénom @endif</label>
-
 
                                     <div class="col-md-6">
                                         <input id="first_name" type="text" class="form-control" name="first_name" value="{{ old('first_name') }}" @if(!$errors->any()) autofocus @elseif($errors->any() && $errors->first() == $errors->first('first_name')) autofocus style="border-top-color: red; border-right-color: red; border-bottom-color: red;" @endif>
@@ -93,6 +97,9 @@ $countries = Country::all();
                                     </div>
                                 </div>
 
+
+                                <option value="" selected disabled hidden><?php echo($lang == 'es' ? 'Escoja el sexo' : ($lang == 'en' ? 'Choose the gender' : ($lang == 'fr' ? 'Choisissez le genre' : 'Escoja el sexo'))); ?></option>
+
                                 <div class="form-group{{ $errors->has('gender') ? ' has-error' : '' }}">
                                     <label for="gender" class="col-md-4 control-label">@if ($lang == 'es')
                                             Sexo @elseif($lang == 'en') Gender @elseif($lang == 'fr')
@@ -101,7 +108,6 @@ $countries = Country::all();
                                     <div class="col-md-6">
                                         <select id="slct_user_gender" class="form-control col-md-9" name="gender" title="Escoja el sexo..." @if($errors->any() && $errors->first() == $errors->first('gender')) autofocus style="border-color: red;" @endif>>
 
-                                            <option value="" selected disabled hidden><?php echo($lang == 'es' ? 'Escoja el sexo' : ($lang == 'en' ? 'Choose the gender' : ($lang == 'fr' ? 'Choisissez le genre' : 'Escoja el sexo'))); ?></option>
 
                                             <option value="male" data-image="{{asset('images/icons/gender_icons/male_16x16.png')}}" @if(old('gender') == 'male') selected @endif>
                                                 @if ($lang == 'es') Masculino @elseif($lang == 'en')

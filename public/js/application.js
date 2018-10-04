@@ -18,27 +18,32 @@ function asignarEventos() {
     // Flexisel. Responsive Carousel jQuery Plugin. Videos en index_page. De último para q no intervenga con la carga de los header
     flexisel();
 
+    // Determino las distintas partes de la página wev actual y de la anterior
+    var oldURL = document.referrer.toString();
+    var currentURL = document.location.href.toString();
 
-    // Uso de ddList para mostrar banderas en los select
-    // $('#slct_country_id').ddlist({
-    //     width: 345
-    // });
+    var oldURLparts = oldURL.split('/');
+    var oldURLlastSegment = oldURLparts.pop() || oldURLparts.pop();
+
+    var currentURLparts = currentURL.split('/');
+    var currentURLlastSegment = currentURLparts.pop() || currentURLparts.pop();
+
 
     // Uso de Image Combo Box para mostrar los dos sexos en un select
-    $('#slct_user_gender').msDropDown();
-
+    var genderDropdown = $('#slct_user_gender').msDropDown().data("dd");
     // Uso de Image Combo Box para mostrar un listado de los países y sus banderas en un select
-    // $('#slct_country_id').msDropDown({
-    //     // selectedIndex: 203
-    //
-    // })
+    var countryDropdown = $("#slct_country_id").msDropdown().data("dd");
 
-    // document.getElementById("slct_country_id").selectedIndex = "4";
+    // Determino si la página anterior es la misma que la actual, para no alterar el estado de los select salvo que sea la 1ra vez que se muestra
+    // y así conservar el valor "old" en el proceso de validación del formulario de registro:
+    if (oldURLlastSegment != currentURLlastSegment) {
+        // Selecciono el item con index 1 (Femenino) del select, usando Image Combo Box para mostrar los dos sexos
+        genderDropdown.set("selectedIndex", 1);
 
-    // $('#slct_country_id').set("selectedIndex", 2);
+        // Selecciono el item con index 235 (USA) del select, usando Image Combo Box para mostrar un listado de los países y sus banderas
+        countryDropdown.set("selectedIndex", 235);
+    }
 
-    var oDropdown = $("#slct_country_id").msDropdown().data("dd");
-    oDropdown.set("selectedIndex", 235);
 
 }
 
