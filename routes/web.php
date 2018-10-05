@@ -75,5 +75,9 @@
     // Route::get('/contact_page', 'UserController@show_contact_page')->name('contact_page');
     Route::get('{language}/contact_page', 'UserController@show_contact_page')->name('contact_page');
     
+    
+    // Recibe los datos del formulario de nuevo Message, para validarlos y luego almacenarlos en la BD
+    Route::post('/create_message_script', 'MessageController@goto_create_message_script')->name('create_message_script');
+    
     # ** Rutas del Administrador autenticado **
 

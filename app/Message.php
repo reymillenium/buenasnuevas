@@ -4,11 +4,11 @@
     
     use Illuminate\Database\Eloquent\Model;
     
-    class Country extends Model
+    class Message extends Model
     {
-    
+        
         // Reescribimos la propiedad table, por si queremos definir un nombre de tabla diferente para el modelo.
-        protected $table = 'countries';
+        protected $table = 'messages';
         
         // Para especificar que no quiero usar el timestamp (campos created_at y updated_at) en mi tabla
         // public $timestamps = false;
@@ -19,14 +19,16 @@
          * @var array
          */
         protected $fillable = [
-            'code',
-            'name'
+            'user_id',
+            'subject',
+            'body'
         ];
         
-        public function users()
+        public function user()
         {
-            // Especifico que un Country tiene muchos Users
-            return $this->hasMany(User::class, 'country_id', 'id');
+            // Especifico que un Message pertenece a un User
+            return $this->belongsTo(User::class, 'user_id', 'id');
         }
+        
         
     }

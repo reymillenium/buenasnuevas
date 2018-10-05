@@ -29,9 +29,6 @@ $countries = Country::all();
 
 
 
-
-
-
                                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                     <label for="first_name" class="col-md-4 control-label">@if ($lang == 'es')
                                             Nombre @elseif($lang == 'en') First name @elseif($lang == 'fr')
