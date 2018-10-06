@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en">
+{{--<html lang="en">--}}
+<html lang="{{$lang}}">
 <head>
 
-    <title>@yield('page_title') - Iglesia Bautista Buenas Nuevas</title>
+    <title>@yield('page_title')</title>
 
     <!-- *** Basic characteristics of the web page. *** -->
     <meta charset="UTF-8">
