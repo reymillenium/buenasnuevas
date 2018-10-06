@@ -5,9 +5,7 @@
 {{--@extends('layouts.general_layout_' . "{$lang}")--}}
 @extends('layouts.general_layout')
 
-@if ($lang == 'es')
-    @section('page_title', "Inicio - Iglesia Bautista Buenas Nuevas")
-@elseif ($lang == 'en')
+@if ($lang == 'en')
     @section('page_title', "Home - Baptist Church Buenas Nuevas")
 @elseif ($lang == 'fr')
     @section('page_title', "Accueil - Église Baptiste Buenas Nuevas")

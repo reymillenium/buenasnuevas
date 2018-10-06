@@ -2,17 +2,22 @@
     $lang = isset($language) ? $language : 'es';
 ?>
 
-{{--@extends('layouts.general_layout_' . "{$lang}")--}}
 @extends('layouts.general_layout')
 
-@section('page_title', "Videos")
+@if ($lang == 'en')
+    @section('page_title', "Videos - Baptist Church Buenas Nuevas")
+@elseif ($lang == 'fr')
+    @section('page_title', "Vidéos - Église Baptiste Buenas Nuevas")
+@else
+    @section('page_title', "Videos - Iglesia Bautista Buenas Nuevas")
+@endif
 
 @section('content')
 
     <div class="photos">
         <div class="container">
 
-            <h2>VIDEOS</h2>
+            <h2>@if ($lang == 'en') VIDEOS @elseif ($lang == 'fr') VIDÉOS @else VIDEOS @endif</h2>
 
             <!-- Insert to your webpage where you want to display the slider -->
             <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:940px;padding-left:0px; padding-right:250px;margin:0px auto 0px;max-height: 480px;">
@@ -202,9 +207,12 @@
                             <img src="{{asset('slidervideo_images/x2EDe8sZICY-tn.jpg')}}" alt="Somos el pueblo de Dios - Grupo Musical Iglesia Bautista Buenas Nuevas" title="Somos el pueblo de Dios - Grupo Musical Iglesia Bautista Buenas Nuevas"/>
                         </li>
                     </ul>
-                    <div class="amazingslider-engine">
-                        <a href="http://amazingslider.com" title="Responsive jQuery Slideshow">Responsive jQuery
-                            Slideshow</a></div>
+
+                    {{--<div class="amazingslider-engine">--}}
+                        {{--<a href="http://amazingslider.com" title="Responsive jQuery Slideshow">--}}
+                            {{--Videos--}}
+                        {{--</a>--}}
+                    {{--</div>--}}
                 </div>
             </div>
             <!-- End of body section HTML codes -->

@@ -15,15 +15,14 @@
             <!----- contact-grids ----->
             <div class="contact-grids">
                 <div class="col-md-5">
-                    <h3>@if ($lang == 'es') Dirección @elseif($lang == 'en') Address @elseif($lang == 'fr')
-                            Adrese @endif</h3>
+                    <h3>@if($lang == 'en') Address @elseif($lang == 'fr') Adrese @else Dirección @endif</h3>
                     <div class="address">
                         <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim
                             placerat.</p>
                         <p>1351 NW 32nd Ct,
                             <br>Miami, FL 33125</p>
-                        <!--<p>Freephone : +1 800 559 6580</p>-->
-                        <p>Teléfono : +1 (786) 635-8058</p>
+                        <p>@if ($lang == 'en') Phone @elseif ($lang == 'fr') Téléphone @else Teléfono @endif : +1 (786)
+                            635-8058</p>
                         <!--<p>FAX : +1 800 889 9898</p>-->
                         <p>E-mail : <a href="mailto:diegoflor@comcast.net">diegoflor@comcast.net</a></p>
                     </div>

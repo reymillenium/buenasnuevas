@@ -2,20 +2,24 @@
     $lang = isset($language) ? $language : 'es';
 ?>
 
-@extends('layouts.general_layout_' . "{$lang}")
+@extends('layouts.general_layout')
 
-@section('page_title', Auth::user()->first_name . ' Dashboard')
+@if ($lang == 'en')
+    @section('page_title', Auth::user()->first_name . ' Dashboard' . " - Baptist Church Buenas Nuevas")
+@elseif ($lang == 'fr')
+    @section('page_title', Auth::user()->first_name . ' Dashboard' . " - Église Baptiste Buenas Nuevas")
+@else
+    @section('page_title', Auth::user()->first_name . ' Dashboard' . " - Iglesia Bautista Buenas Nuevas")
+@endif
 
 @section('content')
     <div class="study">
         <div class="container">
             <div class="row">
 
-
-
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
-                        <div class="panel-heading">Datos personales de {{ Auth::user()->first_name }}</div>
+                        <div class="panel-heading">@if ($lang == 'en') Personal data of @elseif ($lang == 'fr') Données personnelles de @else Datos personales de @endif {{ Auth::user()->first_name }}</div>
 
                         <div class="panel-body">
                             <form class="form-horizontal" method="POST" action="{{ route('register') }}">

@@ -139,9 +139,7 @@
                     @guest
                         <li id="li_email" style="cursor: pointer">
                             <a class="login faa-parent animated-hover" href="{{ route('login_page', ['language' => 'es']) }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
-                                @if ($lang == 'es')
-                                    Ingresar
-                                @elseif ($lang == 'en')
+                                @if ($lang == 'en')
                                     Login
                                 @elseif ($lang == 'fr')
                                     Entrer
@@ -157,9 +155,7 @@
                                                      document.getElementById('logout-form').submit();">
 
                                 <i class="fas fa-sign-out-alt faa-horizontal fa-slow" aria-hidden="true"></i>
-                                @if ($lang == 'es')
-                                    Desconectarse
-                                @elseif ($lang == 'en')
+                                @if ($lang == 'en')
                                     Logout
                                 @elseif ($lang == 'fr')
                                     Déconnecter
@@ -187,9 +183,7 @@
     <div class="header-bottom">
         <div class="container">
             <div class="logo">
-                @if ($lang == 'es')
-                    <a href="{{route('index_page', ['language' => 'es'])}}"><img src="{{asset('images/logos/logo_Church_Photoshop_es.png')}}" class="img-responsive" alt=""/></a>
-                @elseif ($lang == 'en')
+                @if ($lang == 'en')
                     <a href="{{route('index_page', ['language' => 'en'])}}"><img src="{{asset('images/logos/logo_Church_Photoshop_en.png')}}" class="img-responsive" alt=""/></a>
                 @elseif ($lang == 'fr')
                     <a href="{{route('index_page', ['language' => 'fr'])}}"><img src="{{asset('images/logos/logo_Church_Photoshop_fr.png')}}" class="img-responsive" alt=""/></a>
@@ -202,9 +196,7 @@
             <!-- Authentication Links -->
             @guest
                 <div class="bottom-left">
-                    @if ($lang == 'es')
-                        <a href="{{route('register_page', ['language' => 'es'])}}">¿NUEVO AQUÍ? REGÍSTRESE</a>
-                    @elseif ($lang == 'en')
+                    @if ($lang == 'en')
                         <a href="{{route('register_page', ['language' => 'en'])}}">¿NEW HERE? REGISTER</a>
                     @elseif ($lang == 'fr')
                         <a href="{{route('register_page', ['language' => 'fr'])}}">NOUVEAU ICI? S'INSCRIRE</a>
@@ -227,9 +219,7 @@
                 <ul id="ul_menu" class="menu cl-effect-15">
 
                     <li>
-                        @if ($lang == 'es')
-                            <a href="{{ route('index_page', ['language'=>'es']) }}" data-hover="Inicio">Inicio</a>
-                        @elseif ($lang == 'en')
+                        @if ($lang == 'en')
                             <a href="{{ route('index_page', ['language'=>'en']) }}" data-hover="Home">Home</a>
                         @elseif ($lang == 'fr')
                             <a href="{{ route('index_page', ['language'=>'fr']) }}" data-hover="Accueil">Accueil</a>
@@ -241,14 +231,12 @@
                     <label>|</label>
 
                     <li>
-                        @if ($lang == 'es')
-                            <a href="{{ route('our_mission_page', ['language'=>'es']) }}" data-hover="NUESTRA MISIÓN">NUESTRA
-                                MISIÓN</a>
-                        @elseif ($lang == 'en')
+                        @if ($lang == 'en')
                             <a href="{{ route('our_mission_page', ['language'=>'en']) }}" data-hover="OUR MISSION">OUR
                                 MISSION</a>
                         @elseif ($lang == 'fr')
-                            <a href="{{ route('our_mission_page', ['language'=>'fr']) }}" data-hover="ACTIVITÉS">ACTIVITÉS</a>
+                            <a href="{{ route('our_mission_page', ['language'=>'fr']) }}" data-hover="NOTRE MISSION">NOTRE
+                                MISSION</a>
                         @else
                             <a href="{{ route('our_mission_page', ['language'=>'es']) }}" data-hover="NUESTRA MISIÓN">NUESTRA
                                 MISIÓN</a>
@@ -258,9 +246,7 @@
                     <label>|</label>
 
                     <li>
-                        @if ($lang == 'es')
-                            <a href="{{ route('activities_page', ['language'=>'es']) }}" data-hover="ACTIVIDADES">ACTIVIDADES</a>
-                        @elseif ($lang == 'en')
+                        @if ($lang == 'en')
                             <a href="{{ route('activities_page', ['language'=>'en']) }}" data-hover="ACTIVITIES">ACTIVITIES</a>
                         @elseif ($lang == 'fr')
                             <a href="{{ route('activities_page', ['language'=>'fr']) }}" data-hover="ACTIVITÉS">ACTIVITÉS</a>
@@ -272,9 +258,7 @@
                     <label>|</label>
 
                     <li>
-                        @if ($lang == 'es')
-                            <a href="{{ route('ministries_page', ['language'=>'es']) }}" data-hover="MINISTERIOS">MINISTERIOS</a>
-                        @elseif ($lang == 'en')
+                        @if ($lang == 'en')
                             <a href="{{ route('ministries_page', ['language'=>'en']) }}" data-hover="MINISTRIES">MINISTRIES</a>
                         @elseif ($lang == 'fr')
                             <a href="{{ route('ministries_page', ['language'=>'fr']) }}" data-hover="MINISTÈRES">MINISTÈRES</a>
@@ -286,9 +270,7 @@
                     <label>|</label>
 
                     <li>
-                        @if ($lang == 'es')
-                            <a href="{{ route('study_page', ['language'=>'es']) }}" data-hover="ESTUDIO">ESTUDIO</a>
-                        @elseif ($lang == 'en')
+                        @if ($lang == 'en')
                             <a href="{{ route('study_page', ['language'=>'en']) }}" data-hover="STUDY">STUDY</a>
                         @elseif ($lang == 'fr')
                             <a href="{{ route('study_page', ['language'=>'fr']) }}" data-hover="STUDIO">STUDIO</a>
@@ -301,10 +283,7 @@
 
                     <li id="li_resources" class="dropdown" onmouseover="showUnorderedListHover()" onmouseout="hideUnorderedListMouseLeave()">
 
-                        @if ($lang == 'es')
-                            <a href="#" class="dropdown-toggle hvr-underline-from-center" data-hover="RECURSOS">RECURSOS
-                                <b class="fa fa-caret-down"></b></a>
-                        @elseif ($lang == 'en')
+                        @if ($lang == 'en')
                             <a href="#" class="dropdown-toggle hvr-underline-from-center" data-hover="RESOURCES">RESOURCES
                                 <b class="fa fa-caret-down"></b></a>
                         @elseif ($lang == 'fr')
@@ -321,9 +300,7 @@
                             @guest
                                 <li>
                                     <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i>
-                                        @if ($lang == 'es')
-                                            LIBRERÍA
-                                        @elseif ($lang == 'en')
+                                        @if ($lang == 'en')
                                             LIBRARY
                                         @elseif ($lang == 'fr')
                                             LIBRAIRIE
@@ -334,9 +311,7 @@
                                 </li>
 
                                 <li><a href=""><i class="fa fa-link"></i>
-                                        @if ($lang == 'es')
-                                            ENLACES
-                                        @elseif ($lang == 'en')
+                                        @if ($lang == 'en')
                                             LINKS
                                         @elseif ($lang == 'fr')
                                             LIENS
@@ -346,29 +321,7 @@
                                     </a>
                                 </li>
                             @else
-                                @if ($lang == 'es')
-                                    <li>
-                                        <a href="{{ route('user_page', ['language' => 'es']) }}"><i class="fa fa-user"></i> {{ Auth::user()->first_name}}
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ route('videos_page', ['language' => 'es']) }}"><i class="fa fa-video"></i>
-                                            VIDEOS</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ route('pictures_page', ['language' => 'es']) }}"><i class="fa fa-image"></i>
-                                            FOTOS</a>
-                                    </li>
-
-                                    <li>
-                                        <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i>
-                                            LIBRERÍA</a>
-                                    </li>
-
-                                    <li><a href=""><i class="fa fa-link"></i> ENLACES</a></li>
-                                @elseif ($lang == 'en')
+                                @if ($lang == 'en')
                                     <li>
                                         <a href="{{ route('user_page', ['language' => 'en']) }}"><i class="fa fa-user"></i> {{ Auth::user()->first_name}}
                                         </a>
@@ -445,9 +398,7 @@
                     <label>|</label>
 
                     <li>
-                        @if ($lang == 'es')
-                            <a href="{{ route('contact_page',  ['language'=> 'es']) }}" data-hover="CONTACTO">CONTACTO</a>
-                        @elseif ($lang == 'en')
+                        @if ($lang == 'en')
                             <a href="{{ route('contact_page',  ['language'=> 'en']) }}" data-hover="CONTACT">CONTACT</a>
                         @elseif ($lang == 'fr')
                             <a href="{{ route('contact_page',  ['language'=> 'fr']) }}" data-hover="CONTACT">CONTACT</a>
@@ -487,9 +438,7 @@
 
         <div class="col-md-3 loc">
             <h3>
-                @if ($lang == 'es')
-                    Nuestra Ubicación
-                @elseif ($lang == 'en')
+                @if ($lang == 'en')
                     Our Location
                 @elseif ($lang == 'fr')
                     Notre emplacement
@@ -499,9 +448,7 @@
             </h3>
 
             <p id="p_church_name" class="">
-                @if ($lang == 'es')
-                    Iglesia Bautista Buenas Nuevas
-                @elseif ($lang == 'en')
+                @if ($lang == 'en')
                     Baptist Church Buenas Nuevas
                 @elseif ($lang == 'fr')
                     Bonne nouvelle église baptiste
@@ -520,9 +467,7 @@
 
             <p>
                 <span>
-                    @if ($lang == 'es')
-                        Teléfono :
-                    @elseif ($lang == 'en')
+                    @if ($lang == 'en')
                         Phone :
                     @elseif ($lang == 'fr')
                         Téléphone :
@@ -537,9 +482,7 @@
 
         <div class="col-md-3 ma">
             <h3>
-                @if ($lang == 'es')
-                    Búsquenos
-                @elseif ($lang == 'en')
+                @if ($lang == 'en')
                     FIND US
                 @elseif ($lang == 'fr')
                     Nous trouver
@@ -552,14 +495,7 @@
         </div>
 
         <div class="col-md-3 or">
-            @if ($lang == 'es')
-                <h3>Nuestra Iglesia</h3>
-                <li><a href="{{ route('our_mission_page', ['language'=>'es']) }}">• Nuestra misión</a></li>
-                <li><a href="{{ route('activities_page', ['language'=>'es']) }}">• Actividades</a></li>
-                <li><a href="{{ route('ministries_page', ['language'=>'es']) }}">• Ministerios</a></li>
-                <li><a href="{{ route('study_page', ['language'=>'es']) }}">• Estudio</a></li>
-                <li><a href="{{ route('contact_page', ['language'=>'es']) }}">• Contacto</a></li>
-            @elseif ($lang == 'en')
+            @if ($lang == 'en')
                 <h3>Our Church</h3>
                 <li><a href="{{ route('our_mission_page', ['language'=>'en']) }}">• Our Mission</a></li>
                 <li><a href="{{ route('activities_page', ['language'=>'en']) }}">• Activities</a></li>
@@ -587,9 +523,7 @@
 
         <div class="col-md-3 con">
             <h3>
-                @if ($lang == 'es')
-                    Conéctese
-                @elseif ($lang == 'en')
+                @if ($lang == 'en')
                     Connect
                 @elseif ($lang == 'fr')
                     Connecter
