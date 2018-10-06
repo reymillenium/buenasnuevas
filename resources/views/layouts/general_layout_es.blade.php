@@ -22,9 +22,9 @@
     <script src="{{asset('sliderengine/initslider-1.js')}}"></script>
 
     <!-- Plugin de jquery para las animaciones -->
-    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
+{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>--}}
 
-    <!-- ** Dirección del fichero .js del plugin Alertify ** -->
+<!-- ** Dirección del fichero .js del plugin Alertify ** -->
     <script type="text/javascript" src="{{asset('alertify/alertify-1.11.1/alertify.min.js')}}"></script>
 
     <!-- Plugin Swipebox para la Galeria de Imágenes -->
@@ -129,7 +129,8 @@
                     </li>
                     |
                     <li>
-                        <a class="fr" href="{{route(collect(request()->segments())->last(), ['language'=> 'fr'])}}"><img src="{{asset('images/icons/languages/France.png')}}"> Français</a>
+                        <a class="fr" href="{{route(collect(request()->segments())->last(), ['language'=> 'fr'])}}"><img src="{{asset('images/icons/languages/France.png')}}">
+                            Français</a>
                     </li>
                     |
 
@@ -183,7 +184,6 @@
             <div class="clearfix"></div>
         </div>
     </div>
-
 
     <div class="header-bottom">
         <div class="container">

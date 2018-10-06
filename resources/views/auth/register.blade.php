@@ -8,7 +8,8 @@ $countries = Country::all();
 
 ?>
 
-@extends('layouts.general_layout_' . "{$lang}")
+{{--@extends('layouts.general_layout_' . "{$lang}")--}}
+@extends('layouts.general_layout')
 
 @section('page_title', "Registro")
 

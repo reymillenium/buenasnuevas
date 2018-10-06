@@ -1,13 +1,10 @@
 <?php
-
-$layoutName = 'general_layout_';
+// $layoutName = 'general_layout_';
 $lang = isset($language) ? $language : 'es';
-
-
-
 ?>
 
-@extends('layouts.' . "{$layoutName}" . "{$lang}")
+{{--@extends('layouts.' . "{$layoutName}" . "{$lang}")--}}
+@extends('layouts.general_layout')
 
 @section('page_title', "Ingresar")
 
