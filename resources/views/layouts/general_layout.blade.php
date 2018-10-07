@@ -299,7 +299,7 @@
                         <ul class="sub-menu dropdown-menu" onmouseout="hideUnorderedListMouseLeave()">
                         {{--<ul class="sub-menu dropdown-menu">--}}
 
-                            <!-- Dropdown Links -->
+                        <!-- Dropdown Links -->
                             @guest
                                 <li>
                                     <a id="a_library" href="https://www.cristianismohist.com/" target="_newtab"><i class="fa fa-book-open"></i>
@@ -354,7 +354,7 @@
 
                                     <li>
                                         <a href="{{ route('videos_page', ['language' => 'fr']) }}"><i class="fa fa-video"></i>
-                                            VIDEOS</a>
+                                            VIDÉOS</a>
                                     </li>
 
                                     <li>
@@ -397,6 +397,64 @@
 
                         </ul>
                     </li>
+
+                    <div id="div_resources_mobile">
+
+                        @Auth
+                            <li id="li_user">
+                                @if ($lang == 'en')
+                                    <a href="{{ route('user_page', ['language'=>'en']) }}" data-hover="{{ Auth::user()->first_name . ' Dashboard' }}">{{ Auth::user()->first_name . ' Dashboard' }}</a>
+                                @elseif ($lang == 'fr')
+                                    <a href="{{ route('user_page', ['language'=>'fr']) }}" data-hover="{{ Auth::user()->first_name . ' Dashboard' }}">{{ Auth::user()->first_name . ' Dashboard' }}</a>
+                                @else
+                                    <a href="{{ route('user_page', ['language'=>'es']) }}" data-hover="{{ Auth::user()->first_name . ' Dashboard' }}">{{ Auth::user()->first_name . ' Dashboard' }}</a>
+                                @endif
+                            </li>
+
+                            <li id="li_videos">
+                                @if ($lang == 'en')
+                                    <a href="{{ route('videos_page', ['language'=>'en']) }}" data-hover="VIDEOS">VIDEOS</a>
+                                @elseif ($lang == 'fr')
+                                    <a href="{{ route('videos_page', ['language'=>'fr']) }}" data-hover="VIDÉOS">VIDÉOS</a>
+                                @else
+                                    <a href="{{ route('videos_page', ['language'=>'es']) }}" data-hover="VIDEOS">VIDEOS</a>
+                                @endif
+                            </li>
+
+                            <li id="li_pictures">
+                                @if ($lang == 'en')
+                                    <a href="{{ route('pictures_page', ['language'=>'en']) }}" data-hover="PICTURES">PICTURES</a>
+                                @elseif ($lang == 'fr')
+                                    <a href="{{ route('pictures_page', ['language'=>'fr']) }}" data-hover="PHOTOS">PHOTOS</a>
+                                @else
+                                    <a href="{{ route('pictures_page', ['language'=>'es']) }}" data-hover="FOTOS">FOTOS</a>
+                                @endif
+                            </li>
+                        @endauth
+
+                        <li id="li_library">
+                            @if ($lang == 'en')
+                                <a href="https://www.cristianismohist.com/" target="_newtab" data-hover="LIBRARY">LIBRARY</a>
+                            @elseif ($lang == 'fr')
+                                <a href="https://www.cristianismohist.com/" target="_newtab" data-hover="LIBRAIRIE">LIBRAIRIE</a>
+                            @else
+                                <a href="https://www.cristianismohist.com/" target="_newtab" data-hover="LIBRERÍA">LIBRERÍA</a>
+                            @endif
+                        </li>
+
+                        <li id="li_links">
+                            @if ($lang == 'en')
+                                <a href="" data-hover="LINKS">LINKS</a>
+                            @elseif ($lang == 'fr')
+                                <a href="" data-hover="LIENS">LIENS</a>
+                            @else
+                                <a href="" data-hover="ENLACES">ENLACES</a>
+                            @endif
+                        </li>
+
+
+                    </div>
+
 
                     <label>|</label>
 
