@@ -281,7 +281,9 @@
 
                     <label>|</label>
 
-                    <li id="li_resources" class="dropdown" onmouseover="showUnorderedListHover()" onmouseout="hideUnorderedListMouseLeave()">
+
+                    {{--<li id="li_resources" class="dropdown" onmouseover="showUnorderedListHover()" onmouseout="hideUnorderedListMouseLeave()">--}}
+                    <li id="li_resources" class="dropdown">
 
                         @if ($lang == 'en')
                             <a href="#" class="dropdown-toggle hvr-underline-from-center" data-hover="RESOURCES">RESOURCES
@@ -295,6 +297,7 @@
                         @endif
 
                         <ul class="sub-menu dropdown-menu" onmouseout="hideUnorderedListMouseLeave()">
+                        {{--<ul class="sub-menu dropdown-menu">--}}
 
                             <!-- Dropdown Links -->
                             @guest

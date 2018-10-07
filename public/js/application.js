@@ -13,12 +13,15 @@ function asignarEventos() {
      --> *** Definition of the events common for all the Web Site pages *** <--  
      -----------------------------------------------------------------------------------------------------------------*/
 
-    $('a#a_links').click(showUnorderedListHover);
+    // $('a#a_links').click(showUnorderedListHover);
+    $('li#li_resources').on("mouseover", showUnorderedListHover);
+    $('li#li_resources').on("mouseout", hideUnorderedListMouseLeave);
+
 
     // Flexisel. Responsive Carousel jQuery Plugin. Videos en index_page. De último para q no intervenga con la carga de los header
     flexisel();
 
-    // Determino las distintas partes de la página wev actual y de la anterior
+    // Determino las distintas partes de la página web actual y de la anterior
     var oldURL = document.referrer.toString();
     var currentURL = document.location.href.toString();
 
@@ -52,15 +55,16 @@ function asignarEventos() {
  ---------------------------------------------------------------------------------------------------------------------*/
 
 function showUnorderedListHover() {
+
     // alertify.alert('test showUnorderedListHover');
 
     /* Cambio la figura del caret en el b, de abajo hacia arriba */
     $('li.dropdown a b.fa-caret-down').removeClass('fa-caret-down').addClass('fa-caret-up');
-
 }
 
 function hideUnorderedListMouseLeave() {
-//    alert('test hideUnorderedListMouseLeave');
+   // alert('test hideUnorderedListMouseLeave');
+   //  alertify.alert('test hideUnorderedListMouseLeave');
 
     /* Cambio la figura del caret en el b, de arriba hacia abajo */
     $('li.dropdown a b.fa-caret-up').removeClass('fa-caret-up').addClass('fa-caret-down');
@@ -94,6 +98,17 @@ function scrollingIcon() {
 //        easingType: 'easeInOutBack' //demasiado feo
         easingType: 'easeOutBounce' // Aceptable
     });
+
+}
+
+// Determina si el dispositivo tiene una resolución menor de 800 x 600
+function TheDeviceHasLowResolution() {
+
+    if (window.innerWidth <= 800 && window.innerHeight <= 600) {
+        return true;
+    } else {
+        return false;
+    }
 
 }
 

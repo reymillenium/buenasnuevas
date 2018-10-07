@@ -4,33 +4,17 @@
  * and open the template in the editor.
  */
 
-/* Le asigno la class active al enlace de acuerdo a la posición actual (fileName) */
+// Determino las distintas partes de la página web actual
+var currentURL = document.location.href.toString();
+
+/* Le asigno la class 'active' al enlace de acuerdo a la posición actual (fileName), para que se resalte el de la página actual */
 $('.head-nav a').each(function () {
 
-    var fileName = location.href.split("/").slice(-1);
-    // var fileName = location.pathname.split("/").slice(-1);
-
-    if ($(this).attr('href').toString() === fileName.toString()) {
+    if ($(this).attr('href').toString() === currentURL) {
 
         $(this).addClass('active');
-
-        // alert('entrada al pathname ' + fileName);
-        // alert($(this).attr('href'));
-        // alert($(this).attr('class'));
-
     }
 });
-
-/* Asigno el href adecuado a cada enlace de idioma, de acuerdo al propio idioma y la posición actual (fileName) */
-// $('ul.languages a').each(function () {
-//
-//     /* Obtengo el nombre del fichero actual */
-//     var fileName = location.href.split("/").slice(-1);
-//
-//     /* Recompongo el href de acuerdo a la class del a (quito la parte final y agrego una nueva de acuerdo al idioma) */
-//     $(this).attr('href', fileName.toString().slice(0, -7) + $(this).attr('class') + '.html');
-//
-// });
 
 
 /* Opens the mail agent in a new tab (on your browser) */
