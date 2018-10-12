@@ -17,11 +17,12 @@
     
     # ** Rutas del invitado anónimo **
     
-
-    // Personalizo la página de logout, enviando al inicio de vuelta al login (no lo uso ahora)
-    // Route::get('/logout', function () {
-    //     return view('auth.login');
-    // });
+    
+    // Personalizo la página de logout, lanzando un error 404 y así evito el que muestre info crítica del sistema
+    Route::get('/logout', function () {
+        // return view('auth.login');
+        abort(404);
+    });
     
     // Defino la página de inicio por default
     Route::get('/', 'GuestController@show_default_page')->name('default_page');
@@ -55,9 +56,9 @@
     Auth::routes();
     
     // Reescribimos la ruta get de register. Los ponemos después de las rutas Auth originales
-    Route::get( '{language}/register_page', 'GuestController@show_register_page')->name('register_page');
-    Route::get( '{language}/login_page', 'GuestController@show_login_page')->name('login_page');
-    Route::get( 'login', 'GuestController@login')->name('login');
+    Route::get('{language}/register_page', 'GuestController@show_register_page')->name('register_page');
+    Route::get('{language}/login_page', 'GuestController@show_login_page')->name('login_page');
+    Route::get('login', 'GuestController@login')->name('login');
     
     // Muestra la página con los datos del usuario autenticado
     // Route::get('/user_page', 'UserController@show_user_page')->name('user.user_page');
