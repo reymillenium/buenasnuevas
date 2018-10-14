@@ -9,6 +9,16 @@ $(function () {
 // Asigno las funciones para cada evento común, de cada componente
 function asignarEventos() {
 
+    // Determino las distintas partes de la página web actual y de la anterior
+    var oldURL = document.referrer.toString();
+    var currentURL = document.location.href.toString();
+
+    var oldURLparts = oldURL.split('/');
+    var oldURLlastSegment = oldURLparts.pop() || oldURLparts.pop();
+
+    var currentURLparts = currentURL.split('/');
+    var currentURLlastSegment = currentURLparts.pop() || currentURLparts.pop();
+
     /*------------------------------------------------------------------------------------------------------------------
      --> *** Definition of the events common for all the Web Site pages *** <--  
      -----------------------------------------------------------------------------------------------------------------*/
@@ -29,6 +39,24 @@ function asignarEventos() {
 
         // ** Muestro los componentes diseñados para móviles
         $("div.resources_mobile").show();
+
+        // Determinamos si se encuentra en la página de la galería de imágenes
+        if (currentURLlastSegment == 'pictures_page') {
+
+            if (window.localStorage) {
+                if (!localStorage.getItem('firstLoad')) {
+                    localStorage['firstLoad'] = true;
+
+                    // Reload the current page, without using the cache
+                    window.location.reload(true);
+                    // window.location.reload();
+                }
+                else
+                    localStorage.removeItem('firstLoad');
+            }
+
+
+        }
 
 
     } else { // Si o tiene resolución baja o si NO está usando un móvil...
@@ -56,16 +84,6 @@ function asignarEventos() {
 
     // Flexisel. Responsive Carousel jQuery Plugin. Videos en index_page. De último para q no intervenga con la carga de los header
     flexisel();
-
-    // Determino las distintas partes de la página web actual y de la anterior
-    var oldURL = document.referrer.toString();
-    var currentURL = document.location.href.toString();
-
-    var oldURLparts = oldURL.split('/');
-    var oldURLlastSegment = oldURLparts.pop() || oldURLparts.pop();
-
-    var currentURLparts = currentURL.split('/');
-    var currentURLlastSegment = currentURLparts.pop() || currentURLparts.pop();
 
 
     // Uso de Image Combo Box para mostrar los dos sexos en un select
