@@ -346,9 +346,11 @@
                         @endif
                     </div>
 
-                    <div class="fb-like-box" data-href="https://www.facebook.com/w3layouts" data-width="250" data-height="380" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+                    <div class="fb-like-box" data-href="https://www.facebook.com/pages/reymillenium/" data-width="250" data-height="380" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+
                     <div id="fb-root"></div>
-                    <script>(function (d, s, id) {
+                    <script>
+                        (function (d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0];
                             if (d.getElementById(id))
                                 return;
@@ -356,10 +358,27 @@
                             js.id = id;
                             js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
                             fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'facebook-jssdk'));</script>
+                        }(document, 'script', 'facebook-jssdk'));
+                    </script>
+
+
+                    {{--<div class="fb-like" data-href="https://www.facebook.com/pages/Iglesia-Bautista-Buenas-Nuevas/115422128483909" data-width="250" data-height="380" data-layout="standard" data-action="like" data-colorscheme="light" data-size="small" data-show-faces="true" data-header="true" data-share="true" data-show-border="true"></div>--}}
+
+                    {{--<div id="fb-root"></div>--}}
+                    {{--<script>(function (d, s, id) {--}}
+                    {{--var js, fjs = d.getElementsByTagName(s)[0];--}}
+                    {{--if (d.getElementById(id)) return;--}}
+                    {{--js = d.createElement(s);--}}
+                    {{--js.id = id;--}}
+                    {{--js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';--}}
+                    {{--fjs.parentNode.insertBefore(js, fjs);--}}
+                    {{--}(document, 'script', 'facebook-jssdk'));</script>--}}
+
+
                 </div>
 
                 <div class="clearfix"></div>
+
 
             </div>
         </div>

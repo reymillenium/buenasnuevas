@@ -28,7 +28,25 @@ $countries = Country::all();
                             <form role="form" class="form-horizontal" method="POST" action="{{ route('register') }}">
                                 {{ csrf_field() }}
 
+                                {{--<div class="resources_mobile" hidden>--}}
+                                {{--@if ($lang == 'en')--}}
+                                {{--<label>First name</label>--}}
+                                {{--@elseif ($lang == 'fr')--}}
+                                {{--<label>Prénom</label>--}}
+                                {{--@else--}}
+                                {{--<label>Nombre</label>--}}
+                                {{--@endif--}}
+                                {{--</div>--}}
 
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        First name
+                                    @elseif ($lang == 'fr')
+                                        Prénom
+                                    @else
+                                        Nombre
+                                    @endif
+                                </div>
 
                                 <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
                                     <label for="first_name" class="col-md-4 control-label">@if ($lang == 'es')
@@ -46,10 +64,21 @@ $countries = Country::all();
                                     </div>
                                 </div>
 
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        Second name
+                                    @elseif ($lang == 'fr')
+                                        Deuxième prénom
+                                    @else
+                                        Segundo nombre
+                                    @endif
+                                </div>
+
                                 <div class="form-group{{ $errors->has('second_name') ? ' has-error' : '' }}">
-                                    <label for="second_name" class="col-md-4 control-label">@if ($lang == 'es') Segundo
-                                        nombre @elseif($lang == 'en') Second name @elseif($lang == 'fr') Nom de
-                                        famille @endif</label>
+                                    <label for="second_name" class="col-md-4 control-label">@if($lang == 'en')
+                                            Second name @elseif($lang == 'fr') Deuxième prénom @else Segundo
+                                            nombre @endif</label>
+
 
                                     <div class="col-md-6">
                                         <input id="second_name" type="text" class="form-control" name="second_name" value="{{ old('second_name') }}" @if($errors->any() && $errors->first() == $errors->first('second_name')) autofocus style="border-top-color: red; border-right-color: red; border-bottom-color: red;" @endif>
@@ -60,6 +89,16 @@ $countries = Country::all();
                                     </span>
                                         @endif
                                     </div>
+                                </div>
+
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        Last name
+                                    @elseif ($lang == 'fr')
+                                        Nom de famille
+                                    @else
+                                        Apellidos
+                                    @endif
                                 </div>
 
                                 <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
@@ -78,6 +117,15 @@ $countries = Country::all();
                                     </div>
                                 </div>
 
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        Phone
+                                    @elseif ($lang == 'fr')
+                                        Téléphone
+                                    @else
+                                        Teléfono
+                                    @endif
+                                </div>
 
                                 <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
                                     <label for="phone" class="col-md-4 control-label">@if ($lang == 'es')
@@ -95,6 +143,15 @@ $countries = Country::all();
                                     </div>
                                 </div>
 
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        Gender
+                                    @elseif ($lang == 'fr')
+                                        Genre
+                                    @else
+                                        Sexo
+                                    @endif
+                                </div>
 
                                 <option value="" selected disabled hidden><?php echo($lang == 'es' ? 'Escoja el sexo' : ($lang == 'en' ? 'Choose the gender' : ($lang == 'fr' ? 'Choisissez le genre' : 'Escoja el sexo'))); ?></option>
 
@@ -127,6 +184,16 @@ $countries = Country::all();
                                     </div>
                                 </div>
 
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        Country
+                                    @elseif ($lang == 'fr')
+                                        Pays
+                                    @else
+                                        País
+                                    @endif
+                                </div>
+
                                 <div class="form-group{{ $errors->has('country_id') ? ' has-error' : '' }}">
                                     <label for="country_id" class="col-md-4 control-label">@if ($lang == 'es')
                                             País @elseif($lang == 'en') Country @elseif($lang == 'fr')
@@ -157,6 +224,15 @@ $countries = Country::all();
                                     </div>
                                 </div>
 
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        E-Mail
+                                    @elseif ($lang == 'fr')
+                                        E-Mail
+                                    @else
+                                        Correo electrónico
+                                    @endif
+                                </div>
 
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label for="email" class="col-md-4 control-label">@if ($lang == 'es') Correo
@@ -174,6 +250,16 @@ $countries = Country::all();
                                     </div>
                                 </div>
 
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        Password
+                                    @elseif ($lang == 'fr')
+                                        Mot de passe
+                                    @else
+                                        Contraseña
+                                    @endif
+                                </div>
+
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                     <label for="password" class="col-md-4 control-label">@if ($lang == 'es')
                                             Contraseña @elseif($lang == 'en') Password @elseif($lang == 'fr') Mot de
@@ -188,6 +274,16 @@ $countries = Country::all();
                                     </span>
                                         @endif
                                     </div>
+                                </div>
+
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        Confirm password
+                                    @elseif ($lang == 'fr')
+                                        Confirmez le mot de passe
+                                    @else
+                                        Confirmar contraseña
+                                    @endif
                                 </div>
 
                                 <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">

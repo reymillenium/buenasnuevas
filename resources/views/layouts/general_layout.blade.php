@@ -97,7 +97,7 @@
             <div class="head-left">
 
                 <!--<div class="agileits_top_menu">-->
-                <div class="w3l_header_left">
+                <div id="div_contact_info_header" class="w3l_header_left">
                     <ul>
                         <li id="li_address" class="faa-parent animated-hover" style="cursor: pointer">
                             <i class="fa fa-map-marker faa-bounce faa-slow" aria-hidden="true"></i>1351 NW 32nd Ct,
@@ -112,6 +112,31 @@
                         </li>
                     </ul>
                 </div>
+
+                <div class="resources_mobile" hidden>
+                    <ul id="ul_languages" class="languages">
+                        <li>
+                            <a class="es" href="{{route(collect(request()->segments())->last(), ['language'=> 'es'])}}"><img src="{{asset('images/icons/languages/Spain.png')}}">
+                                Español
+                            </a>
+                        </li>
+                        {{--|--}}
+                        <li>
+                            <a class="en" href="{{route(collect(request()->segments())->last(), ['language'=> 'en'])}}"><img src="{{asset('images/icons/languages/United-kingdom.png')}}">
+                                English
+                            </a>
+                        </li>
+                        {{--|--}}
+                        <li>
+                            <a class="fr" href="{{route(collect(request()->segments())->last(), ['language'=> 'fr'])}}"><img src="{{asset('images/icons/languages/France.png')}}">
+                                Français
+                            </a>
+                        </li>
+
+                        {{--<div class="clearfix"></div>--}}
+                    </ul>
+                </div>
+
             </div>
 
             <div class="head-right">
@@ -137,7 +162,7 @@
 
                     {{--<!-- Authentication Links -->--}}
                     @guest
-                        <li id="li_email" style="cursor: pointer">
+                        <li id="li_login_pc" style="cursor: pointer">
                             <a class="login faa-parent animated-hover" href="{{ route('login_page', ['language' => 'es']) }}"><i class="fas fa-sign-in-alt faa-horizontal fa-slow" aria-hidden="true"></i>
                                 @if ($lang == 'en')
                                     Login
@@ -182,13 +207,25 @@
 
     <div class="header-bottom">
         <div class="container">
-            <div class="logo">
+
+            <div id="div_logo_mobile" class="logo resources_mobile" hidden>
                 @if ($lang == 'en')
-                    <a href="{{route('index_page', ['language' => 'en'])}}"><img src="{{asset('images/logos/logo_Church_Photoshop_en.png')}}" class="img-responsive" alt=""/></a>
+                    <a href="{{route('index_page', ['language' => 'en'])}}"><img src="{{asset('images/logos/logo_church_mobile_en.png')}}" class="img-responsive" alt=""/></a>
                 @elseif ($lang == 'fr')
-                    <a href="{{route('index_page', ['language' => 'fr'])}}"><img src="{{asset('images/logos/logo_Church_Photoshop_fr.png')}}" class="img-responsive" alt=""/></a>
+                    <a href="{{route('index_page', ['language' => 'fr'])}}"><img src="{{asset('images/logos/logo_church_mobile_fr.png')}}" class="img-responsive" alt=""/></a>
                 @else
-                    <a href="{{route('index_page', ['language' => 'es'])}}"><img src="{{asset('images/logos/logo_Church_Photoshop_es.png')}}" class="img-responsive" alt=""/></a>
+                    <a href="{{route('index_page', ['language' => 'es'])}}"><img src="{{asset('images/logos/logo_church_mobile_es.png')}}" class="img-responsive" alt=""/></a>
+                @endif
+
+            </div>
+
+            <div id="div_logo_pc" class="logo">
+                @if ($lang == 'en')
+                    <a href="{{route('index_page', ['language' => 'en'])}}"><img src="{{asset('images/logos/logo_church_pc_en.png')}}" class="img-responsive" alt=""/></a>
+                @elseif ($lang == 'fr')
+                    <a href="{{route('index_page', ['language' => 'fr'])}}"><img src="{{asset('images/logos/logo_church_pc_fr.png')}}" class="img-responsive" alt=""/></a>
+                @else
+                    <a href="{{route('index_page', ['language' => 'es'])}}"><img src="{{asset('images/logos/logo_church_pc_es.png')}}" class="img-responsive" alt=""/></a>
                 @endif
 
             </div>
@@ -398,7 +435,7 @@
                         </ul>
                     </li>
 
-                    <div id="div_resources_mobile">
+                    <div class="resources_mobile" hidden>
 
                         @Auth
                             <li id="li_user">
@@ -452,6 +489,50 @@
                             @endif
                         </li>
 
+                        @Auth
+                            <li>
+                                <a class="login faa-parent animated-hover" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form-mobile').submit();">
+
+                                    @if ($lang == 'en')
+                                        <i class="fas fa-sign-out-alt faa-horizontal fa-slow" aria-hidden="true" data-hover="Logout"></i>
+                                        Logout
+                                    @elseif ($lang == 'fr')
+                                        <i class="fas fa-sign-out-alt faa-horizontal fa-slow" aria-hidden="true" data-hover="Logout"></i>
+                                        Déconnecter
+                                    @else
+                                        Desconectarse
+                                    @endif
+                                </a>
+
+                                <form id="logout-form-mobile" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        @else
+                            <li id="li_login_mobile" style="cursor: pointer">
+                                @if ($lang == 'en')
+                                    <a class="login" href="{{ route('login_page', ['language' => 'en']) }}" data-hover="Login">Login</a>
+                                @elseif ($lang == 'fr')
+                                    <a class="login" href="{{ route('login_page', ['language' => 'fr']) }}" data-hover="Entrer">Entrer</a>
+                                @else
+                                    <a class="login" href="{{ route('login_page', ['language' => 'es']) }}" data-hover="Ingresar">Ingresar</a>
+                                @endif
+                            </li>
+
+                            <li>
+                                @if ($lang == 'en')
+                                    <a href="{{route('register_page', ['language' => 'en'])}}" data-hover="REGISTER">REGISTER</a>
+                                @elseif ($lang == 'fr')
+                                    <a href="{{route('register_page', ['language' => 'fr'])}}" data-hover="S'INSCRIRE">S'INSCRIRE</a>
+                                @else
+                                    <a href="{{route('register_page', ['language' => 'es'])}}" data-hover="REGÍSTRESE">REGÍSTRESE</a>
+                                @endif
+                            </li>
+
+                        @endauth
+
 
                     </div>
 
@@ -493,9 +574,7 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-
     <div class="container">
-
 
         <div class="col-md-3 loc">
             <h3>
@@ -555,6 +634,14 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.5357459729416!2d-80.25020808555051!3d25.7858937138933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b73dc4f73af1%3A0x98b16e86c8b112c4!2sIglesia+Bautists+Buenas+Nuevas!5e0!3m2!1ses!2sus!4v1507517766144" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
 
+        <div class="resources_mobile" hidden>
+            <br>
+            <br>
+            <div class="clearfix"></div>
+            <br>
+            <br>
+        </div>
+
         <div class="col-md-3 or">
             @if ($lang == 'en')
                 <h3>Our Church</h3>
@@ -572,13 +659,12 @@
                 <li><a href="{{ route('contact_page', ['language'=>'fr']) }}">• Contact</a></li>
             @else
                 <h3>Nuestra Iglesia</h3>
-                <li><a href="{{ route('our_mission_page', ['language'=>'es']) }}">• Nuestra misión</a></li>
+                <li><a href="{{ route('our_mission_page', ['language'=>'es']) }}">Nuestra misión</a></li>
                 <li><a href="{{ route('activities_page', ['language'=>'es']) }}">• Actividades</a></li>
                 <li><a href="{{ route('ministries_page', ['language'=>'es']) }}">• Ministerios</a></li>
                 <li><a href="{{ route('study_page', ['language'=>'es']) }}">• Estudio</a></li>
                 <li><a href="{{ route('contact_page', ['language'=>'es']) }}">• Contacto</a></li>
             @endif
-
 
         </div>
 
@@ -605,7 +691,7 @@
             </ul>
         </div>
 
-        {{--<div class="clearfix"></div>--}}
+        <div class="clearfix"></div>
 
     </div>
 </footer>

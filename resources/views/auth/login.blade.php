@@ -20,6 +20,16 @@ $lang = isset($language) ? $language : 'es';
                             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                                 {{ csrf_field() }}
 
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        E-Mail
+                                    @elseif ($lang == 'fr')
+                                        E-Mail
+                                    @else
+                                        Correo electrónico
+                                    @endif
+                                </div>
+
                                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <label for="email" class="col-md-4 control-label">@if ($lang=='es') Correo electrónico @elseif ($lang=='en') E-Mail @elseif ($lang=='fr') E-Mail @endif</label>
 
@@ -32,6 +42,16 @@ $lang = isset($language) ? $language : 'es';
                                     </span>
                                         @endif
                                     </div>
+                                </div>
+
+                                <div class="resources_mobile" hidden>
+                                    @if ($lang == 'en')
+                                        Password
+                                    @elseif ($lang == 'fr')
+                                        Mot de passe
+                                    @else
+                                        Contraseña
+                                    @endif
                                 </div>
 
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">

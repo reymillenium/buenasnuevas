@@ -16,24 +16,36 @@ function asignarEventos() {
     // Dependiendo del tipo de resolución del dispositivo es el tipo de menu que voy a mostrar
     if (TheDeviceHasLowResolution() || usingMobile()) { // Si posee baja resolución o si está usando un móvil...
 
-        // alert('Baja Resolución. Width: ' + window.innerWidth + ' Height: ' + innerHeight);
-        // Escondo el menú dropdown de Resources
+        // alertify.alert('Baja Resolución. Width: ' + window.innerWidth + ' Height: ' + innerHeight);
+
+        // **Escondo los componentes diseñados para una PC
+        //
+        // Escondo el menú dropdown de Resources para pc
         $("li#li_resources").hide();
+        // Escondo la info de contacto en la cabezera para pc
+        $("div#div_contact_info_header").hide();
+        // Escondo la imagen del logo para pc
+        $("div#div_logo_pc").hide();
 
-        // Muestro los resources en forma de varios li
-        // $("li#li_library").show();
-        $("div#div_resources_mobile").show();
+        // ** Muestro los componentes diseñados para móviles
+        $("div.resources_mobile").show();
 
 
-    } else {
-        // alert('Resolución Normal. Width: ' + window.innerWidth + ' Height: ' + innerHeight);
+    } else { // Si o tiene resolución baja o si NO está usando un móvil...
 
-        // Muestro el menú dropdown de Resources
+        // alertify.alert('Resolución Normal. Width: ' + window.innerWidth + ' Height: ' + innerHeight);
+
+        // ** Muestro los componentes diseñados para una PC
+        //
+        // Muestro el menú dropdown de Resources para pc
         $("li#li_resources").show();
+        // Muestro la info de contacto en la cabezera para pc
+        $("div#div_contact_info_header").show();
+        // Muestro la imagen del logo para pc
+        $("div#div_logo_pc").show();
 
-        // Escondo los resources en forma de varios li
-        // $("li#li_library").hide();
-        $("div#div_resources_mobile").hide();
+        // ** Escondo los componentes diseñados para móviles
+        $("div.resources_mobile").hide();
 
     }
 
@@ -129,6 +141,7 @@ function scrollingIcon() {
 function TheDeviceHasLowResolution() {
 
     if (window.innerWidth <= 800 && window.innerHeight <= 600) {
+        // if (window.innerWidth <= 1921 || window.innerHeight <= 1081) {
         return true;
     } else {
         return false;

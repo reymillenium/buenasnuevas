@@ -19,7 +19,8 @@
 
                 <div class="col-md-8 col-md-offset-2">
                     <div class="panel panel-default">
-                        <div class="panel-heading">@if ($lang == 'en') Personal data of @elseif ($lang == 'fr') Données personnelles de @else Datos personales de @endif {{ Auth::user()->first_name }}</div>
+                        <div class="panel-heading">@if ($lang == 'en') Personal data of @elseif ($lang == 'fr') Données
+                            personnelles de @else Datos personales de @endif {{ Auth::user()->first_name }}</div>
 
                         <div class="panel-body">
                             <form class="form-horizontal" method="POST" action="{{ route('register') }}">
