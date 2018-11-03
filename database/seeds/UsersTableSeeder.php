@@ -47,16 +47,16 @@
                 'country_id' => $country_id,
                 
                 'first_name' => 'Pedro',
-                'second_name' => 'Picapiedras',
-                'last_name' => 'Roca Dura',
+                'second_name' => '',
+                'last_name' => 'Espino Gavilanes',
                 
-                'email' => 'pedrito@gmail.com',
+                'email' => 'mayegarcia1986@gmail.com',
                 'password' => bcrypt('123456'),
                 
-                'phone' => '2222222222',
-                'gender' => 'male',
+                'phone' => '7864583869',
+                'gender' => 'female',
                 // 'is_active' => '1',
-                'kind' => 'guest'
+                'kind' => 'administrator'
             ]);
             
             // Obtenemos la cantidad de profesiones que existen en la BD con Eloquent ORM
