@@ -17,13 +17,14 @@
             // $profession_id = Profession::where('name', 'Senior Back-end Developer')->value('id');
             
             // Obtenemos el country_id directamente con Eloquent ORM
-            $country_id = Country::where('name', 'Cuba')->value('id');
+            // $country_id = Country::where('name', 'Cuba')->value('id');
+            $country_id = Country::whereName('Cuba')->value('id');
             
             // Usando Eloquent ORM. Muchísimo más sencillo aun!!! Usamos el Modelo User y llamamos a la
             // función create, pasándole un array asociativo con los datos que queremos insertar
             // Usuario especial # 1
             User::create([
-    
+                
                 // 'profession_id' => $profession_id,
                 'country_id' => $country_id,
                 
