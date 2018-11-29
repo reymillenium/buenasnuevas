@@ -2,6 +2,7 @@
     
     namespace BuenasNuevas;
     
+    // Definimos las clases en uso luego del nombre de espacio
     use Illuminate\Notifications\Notifiable;
     use Illuminate\Foundation\Auth\User as Authenticatable;
     
@@ -44,10 +45,26 @@
         //
         // }
         
+        public function isAdmin()
+        {
+            // Devuelvo si es administrador o no (false or true)
+            return ($this->email == 'reymillenium@gmail.com' || $this->kind == 'administrator');
+        }
+        
+        protected static function findByEmail($email)
+        {
+            // return User::where(compact('email'))->first();
+            return static::where(compact('email'))->first();
+        }
+        
+        
         public function country()
         {
             // Especifico que un User pertenece a un Country
             return $this->belongsTo(Country::class, 'country_id', 'id');
+    
+            // En caso de que se sigan las convenciones para la nomenclatura de los campos, se podría expresar de esta forma
+            // return $this->belongsTo(Country::class);
         }
         
         
@@ -55,6 +72,9 @@
         {
             // Especifico que un User tiene muchos Messages
             return $this->hasMany(Message::class, 'user_id', 'id');
+            
+            // En caso de que se sigan las convenciones para la nomenclatura de los campos, se podría expresar de esta forma
+            // return $this->hasMany(Message::class);
         }
         
     }

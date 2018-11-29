@@ -18,6 +18,7 @@
             
             // Obtenemos el country_id directamente con Eloquent ORM
             // $country_id = Country::where('name', 'Cuba')->value('id');
+            // Laravel incluso permite utilizar métodos mágicos: Laravel entiende que Name es el nombre de la columna
             $country_id = Country::whereName('Cuba')->value('id');
             
             // Usando Eloquent ORM. Muchísimo más sencillo aun!!! Usamos el Modelo User y llamamos a la

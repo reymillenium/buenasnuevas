@@ -2,6 +2,7 @@
     
     namespace BuenasNuevas;
     
+    // Definimos las clases en uso luego del nombre de espacio
     use Illuminate\Database\Eloquent\Model;
     
     class Country extends Model
