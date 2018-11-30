@@ -1,0 +1,41 @@
+/*
+
+************************************************************************************************************************
+                                   *** GENERAL DESIGN OF THE TEMPLATE ***
+                                             By: Reinier Garcia
+************************************************************************************************************************
+*/
+
+body {
+    /* Muestra el scroll vertical en todas las páginas. Así evitamos cambios visuales en el diseño */
+    overflow-y: scroll;
+}
+
+/* DIV con los lenguages en el Panel de Administración */
+
+div.languages {
+    margin-right: 30px;
+}
+
+div.languages img, div.languages li {
+    display: inline;
+    width: 24px;
+    vertical-align: bottom;
+
+    /*color: red;*/
+}
+
+div.languages li a {
+    /*padding: 6px 8px 6px 16px;*/
+    text-decoration: none;
+    font-size: 1em;
+    color: #818181;
+}
+
+/* When you move the mouse over the navigation links, change their color */
+div.languages li a:hover {
+    color: #f1f1f1;
+}
+
+
+

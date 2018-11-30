@@ -52,6 +52,7 @@
     
     # ** Rutas del Usuario autenticado **
     
+    
     // ** Rutas de autenticación **
     Auth::routes();
     
@@ -60,7 +61,7 @@
     Route::get('{language}/login_page', 'GuestController@show_login_page')->name('login_page');
     Route::get('login', 'GuestController@login')->name('login');
     
-    // Muestra la página con los datos del usuario autenticado
+    // Muestra la página personal con los datos del usuario que se ha autenticado
     // Route::get('/user_page', 'UserController@show_user_page')->name('user.user_page');
     Route::get('{language}/user_page', 'UserController@show_user_page')->name('user_page');
     
@@ -76,9 +77,18 @@
     // Route::get('/contact_page', 'UserController@show_contact_page')->name('contact_page');
     Route::get('{language}/contact_page', 'UserController@show_contact_page')->name('contact_page');
     
-    
     // Recibe los datos del formulario de nuevo Message, para validarlos y luego almacenarlos en la BD
     Route::post('/create_message_script', 'MessageController@goto_create_message_script')->name('create_message_script');
     
+    
     # ** Rutas del Administrador autenticado **
-
+    
+    
+    // Muestra la página con parte de los datos de los usuarios del sistema:
+    Route::get('{language}/users_page', 'AdminController@show_users_page')->name('user.users_page');
+    
+    # Muestra la página con los detalles de un User en específico, dado su ID
+    Route::get('{language}/user_details_page/{user}', 'AdminController@show_user_details_page')->where('user', '[0-9]+')->name('user.user_details_page');
+    
+    # Muestra la página con el formulario para la actualización de un User, dado su ID
+    Route::get('{language}/edit_user_page/{user}', 'AdminController@show_edit_user_page')->name('user.edit_user_page');

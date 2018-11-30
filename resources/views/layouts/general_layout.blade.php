@@ -368,6 +368,12 @@
                                     </li>
 
                                     <li>
+                                        <a href="{{ route('user.users_page', ['language' => 'en']) }}"><i class="fa fa-users"></i>
+                                            Settings
+                                        </a>
+                                    </li>
+
+                                    <li>
                                         <a href="{{ route('videos_page', ['language' => 'en']) }}"><i class="fa fa-video"></i>
                                             VIDEOS</a>
                                     </li>
@@ -390,6 +396,12 @@
                                     </li>
 
                                     <li>
+                                        <a href="{{ route('user.users_page', ['language' => 'fr']) }}"><i class="fa fa-users"></i>
+                                            Réglages
+                                        </a>
+                                    </li>
+
+                                    <li>
                                         <a href="{{ route('videos_page', ['language' => 'fr']) }}"><i class="fa fa-video"></i>
                                             VIDÉOS</a>
                                     </li>
@@ -408,6 +420,12 @@
                                 @else
                                     <li>
                                         <a href="{{ route('user_page', ['language' => 'es']) }}"><i class="fa fa-user"></i> {{ Auth::user()->first_name}}
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ route('user.users_page', ['language' => 'es']) }}"><i class="fa fa-users"></i>
+                                            Ajustes
                                         </a>
                                     </li>
 

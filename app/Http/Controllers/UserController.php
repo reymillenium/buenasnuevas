@@ -2,6 +2,7 @@
     
     namespace BuenasNuevas\Http\Controllers;
     
+    use BuenasNuevas\User;
     use Illuminate\Http\Request;
     
     class UserController extends Controller
