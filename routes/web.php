@@ -88,7 +88,7 @@
     Route::get('{language}/users_page', 'AdminController@show_users_page')->name('user.users_page');
     
     # Muestra la página con los detalles de un User en específico, dado su ID
-    Route::get('{language}/user_details_page/{user}', 'AdminController@show_user_details_page')->where('user', '[0-9]+')->name('user.user_details_page');
+    Route::get('{language}/{user}/user_details_page', 'AdminController@show_user_details_page')->where('user', '[0-9]+')->name('user.user_details_page');
     
     # Muestra la página con el formulario para la actualización de un User, dado su ID
     Route::get('{language}/edit_user_page/{user}', 'AdminController@show_edit_user_page')->name('user.edit_user_page');

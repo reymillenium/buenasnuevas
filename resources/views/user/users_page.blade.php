@@ -142,10 +142,10 @@ $lang = isset($language) ? $language : 'es';
 
                                 <!-- Usando url -->
                                 <td style="text-align: left;">
-                                    <a href="{{ url($lang . '/user_details_page/' . $user->id) }}">{{ $user->last_name }}</a>
+                                    <a href="{{ url($lang . '/' . $user->id . '/user_details_page/') }}">{{ $user->last_name }}</a>
                                 </td>
                                 <td style="text-align: left;">
-                                    <a href="{{url("$lang/user_details_page/$user->id")}}">{{ $user->email }}</a>
+                                    <a href="{{url("$lang/$user->id/user_details_page/")}}">{{ $user->email }}</a>
                                 </td>
 
                                 {{-- Usando action --}}

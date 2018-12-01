@@ -116,21 +116,40 @@
             <div class="languages">
                 {{--<ul id="ul_languages" class="languages">--}}
                 <li>
-                    <a class="es" href="{{route('user.'.collect(request()->segments())->last(), ['language'=> 'es'])}}"><img src="{{asset('images/icons/languages/Spain.png')}}">
-                        Español
-                    </a>
+                    @if (isset($user))
+                        <a class="es" href="{{route('user.'.collect(request()->segments())->last(), ['language'=> 'es', $user])}}"><img src="{{asset('images/icons/languages/Spain.png')}}">
+                            Español
+                        </a>
+                    @else
+                        <a class="es" href="{{route('user.'.collect(request()->segments())->last(), ['language'=> 'es', 1])}}"><img src="{{asset('images/icons/languages/Spain.png')}}">
+                            Español
+                        </a>
+                    @endif
+
                 </li>
                 |
                 <li>
-                    <a class="en" href="{{route('user.'.collect(request()->segments())->last(), ['language'=> 'en'])}}"><img src="{{asset('images/icons/languages/United-kingdom.png')}}">
-                        English
-                    </a>
+                    @if(isset($user))
+                        <a class="en" href="{{route('user.'.collect(request()->segments())->last(), ['language'=> 'en', $user])}}"><img src="{{asset('images/icons/languages/United-kingdom.png')}}">
+                            English
+                        </a>
+                    @else
+                        <a class="en" href="{{route('user.'.collect(request()->segments())->last(), ['language'=> 'en', 1])}}"><img src="{{asset('images/icons/languages/United-kingdom.png')}}">
+                            English
+                        </a>
+                    @endif
                 </li>
                 |
                 <li>
-                    <a class="fr" href="{{route('user.'.collect(request()->segments())->last(), ['language'=> 'fr'])}}"><img src="{{asset('images/icons/languages/France.png')}}">
-                        Français
-                    </a>
+                    @if(isset($user))
+                        <a class="fr" href="{{route('user.'.collect(request()->segments())->last(), ['language'=> 'fr', $user])}}"><img src="{{asset('images/icons/languages/France.png')}}">
+                            Français
+                        </a>
+                    @else
+                        <a class="fr" href="{{route('user.'.collect(request()->segments())->last(), ['language'=> 'fr', 1])}}"><img src="{{asset('images/icons/languages/France.png')}}">
+                            Français
+                        </a>
+                    @endif
                 </li>
                 |
 
